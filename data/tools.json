@@ -712,7 +712,8 @@
       "category": "パーソナルエージェント",
       "also_in": [
         "画像生成",
-        "動画生成"
+        "動画生成",
+        "コード生成"
       ],
       "character": "専属の執事エージェント",
       "summary": "専用コンピューターを持ち、覚えて・考えて・実行する個人専属エージェント",
@@ -922,7 +923,9 @@
       "url": "https://kiro.dev/",
       "provider": "AWS（Amazon Web Services）",
       "category": "開発特化",
-      "also_in": [],
+      "also_in": [
+        "コード生成"
+      ],
       "character": "段取り完璧な開発ディレクター",
       "summary": "仕様（スペック）を文書化してから実装する、スペック駆動開発のエージェントIDE",
       "main_models": "デフォルトは Auto（モデルを混合しルーティング）。選択可能な例: GPT-5.6 系、Claude Opus 5／Sonnet 5 系、Haiku 4.5、DeepSeek 3.2、Qwen3 Coder Next 等（公式モデルページ）",
@@ -1535,6 +1538,295 @@
         "coding": 2,
         "creative": 3,
         "research": 5,
+        "action": 4,
+        "value": 4
+      }
+    },
+    {
+      "id": "codex",
+      "name": "Codex",
+      "url": "https://openai.com/codex/",
+      "provider": "OpenAI",
+      "category": "コード生成",
+      "also_in": [],
+      "character": "ローカルとクラウドを行き来する実装エージェント",
+      "summary": "ChatGPT プランに含まれる OpenAI のコーディングエージェント。リポジトリ全体を対象に、複数ファイル編集・コマンド実行・テスト・PR レビューまでをローカルとクラウドの両環境で自律的に進める",
+      "main_models": "GPT-6 世代（主力は GPT-6.1 Sol、軽量枠に GPT-6 Luna。Free／Go は GPT-6 Luna のみ。公式料金ページの上限表による）",
+      "capabilities": [
+        "リポジトリ全体を読み複数ファイルにまたがる編集・大規模リファクタリング・バグ修正",
+        "ターミナル操作とテスト実行（ローカルはサンドボックス内）",
+        "クラウドタスク（リポジトリごとの隔離環境で非同期に継続）",
+        "複数エージェントの並列実行とサブエージェント分担",
+        "GitHub 連携（PR の自動コードレビュー、@codex でのタスク委任）",
+        "AGENTS.md によるプロジェクト規約の常駐指定",
+        "MCP 対応、Slack・Linear 連携",
+        "Codex SDK／codex exec による CI 組み込み"
+      ],
+      "strengths": [
+        "リポジトリ単位で文脈を持ち依存関係をまたぐリファクタリングやテスト生成まで一貫して処理できる",
+        "ローカル（CLI／IDE／デスクトップ）とクラウド（非同期タスク・PR 自動レビュー）を行き来できる提供面の広さ",
+        "権限プロファイル（read-only／workspace／danger-full-access）とサンドボックスで実行権限を公式機構として制御できる",
+        "ChatGPT の既存プランに含まれ追加契約なしで始められる"
+      ],
+      "weaknesses": [
+        "利用上限が「5時間あたりのローカルメッセージ数」の目安表示で幅が大きく、大きなプロジェクトほど消費が読みにくい",
+        "Free／Go はデスクトップアプリのみ・GPT-6 Luna のみで CLI や IDE 拡張には Plus 以上が必要",
+        "API キー利用では GitHub コードレビュー等のクラウド機能が使えない",
+        "ChatGPT 本体と利用枠・クレジットを共有する"
+      ],
+      "pricing": "単体販売はなく ChatGPT プランに含まれる（公式料金ページで確認）。Free $0／Go $8/月はデスクトップアプリのみ。Plus $20/月で Web・CLI・IDE拡張・iOS の全提供面とクラウド連携が開く（実質の入口）。Pro は $100／$200／$500 の3段階（価格内訳は公式ページを確認した二次資料による）。Business $25/席/月",
+      "platforms": [
+        "CLI（macOS／Linux／Windows・WSL）",
+        "IDE拡張",
+        "デスクトップアプリ（ChatGPT アプリ）",
+        "Web（Codex cloud）",
+        "iOS"
+      ],
+      "cautions": "緩い権限設定ではマシン全体に触れるため承認設定とプロファイル管理が前提。クラウドタスクは GitHub リポジトリを OpenAI 側環境で扱う形態で、組織ポリシーによっては利用可否の確認が要る。モデルと上限の改定が頻繁で、上限目安は固定値ではない",
+      "sources": [
+        "https://openai.com/codex/",
+        "https://developers.openai.com/codex/pricing",
+        "https://learn.chatgpt.com/codex/permissions"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 4,
+        "coding": 5,
+        "creative": 2,
+        "research": 2,
+        "action": 5,
+        "value": 3
+      }
+    },
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "url": "https://claude.com/product/claude-code",
+      "provider": "Anthropic",
+      "category": "コード生成",
+      "also_in": [],
+      "character": "ターミナル住まいの現場派エンジニア",
+      "summary": "ターミナルを本拠地とする Anthropic のコーディングエージェント。コードベース全体を理解し、複数ファイル編集・コマンド実行・テスト・PR 作成までを自律的にこなし、数時間〜数日単位の移行作業も担う",
+      "main_models": "Claude Opus／Sonnet／Haiku 系（現行は5世代、Fast mode の対象として Opus 5.5 を公式明記）。コンテキストウィンドウは最大1Mトークン（モデルにより変動）",
+      "capabilities": [
+        "コードベース全体のマッピングと説明（agentic search で構造と依存関係を自動把握）",
+        "複数ファイルにまたがる編集と import を全体で追跡する大規模リファクタリング／マイグレーション",
+        "ターミナルでのコマンド実行・テスト実行",
+        "GitHub／GitLab 連携（Issue を読み PR を開く）",
+        "複数タスクの同時並行実行とサブエージェント分担",
+        "CLAUDE.md によるプロジェクト指示の常駐（設定と MCP は全提供面で共有）",
+        "CI/CD 連携（GitHub Actions／GitLab CI による PR レビュー自動化）",
+        "スケジュール実行、Slack からのバグ報告→PR 化"
+      ],
+      "strengths": [
+        "リポジトリ全体を対象に import をたどりテストを回しながら進める進め方で、長時間の移行作業を想定タスクとして公式が明示している",
+        "ローカル実行が基本形でリモートのコードインデックスを介さずモデル API に直接接続する設計",
+        "ターミナル／VS Code／JetBrains／デスクトップ／Web／モバイルで同じエンジン・同じ CLAUDE.md・同じ MCP 設定を使い回せる",
+        "MCP の策定元でコマンドラインツールとの連携が厚い"
+      ],
+      "weaknesses": [
+        "無料プランでは使えず Claude の有料プランが必須",
+        "利用枠は Claude 本体（チャット）と完全共有の1プールで枠を取り合う",
+        "上限は「Pro の何倍」という相対表示のみで固定のメッセージ数・トークン数は公式に示されない",
+        "大規模リポジトリでの長時間・並列タスクは枠消費が大きい"
+      ],
+      "pricing": "単体販売はなく Claude の有料プラン全てに含まれる（公式料金ページ・FAQ で確認）。Pro $20/月（年払い月換算 $17）が入口。Max $100/月（Pro の5倍）、Ultra $200/月（週次10倍・条件つきで5時間上限なし）。上限は5時間セッション＋週次上限の二段構えで Claude 本体と同一プール。Console 利用は API 従量",
+      "platforms": [
+        "ターミナル CLI（macOS／Linux／Windows、WSL 対応）",
+        "VS Code 拡張",
+        "JetBrains プラグイン",
+        "デスクトップアプリ",
+        "Web（claude.ai/code）",
+        "モバイルアプリ",
+        "Slack"
+      ],
+      "cautions": "利用枠が Claude チャットと同一プールのため、日常のチャット利用がコーディング枠を圧迫する。上限の絶対値が公式に示されず消費ペースの予測がしにくい。Fast mode は research preview で単価が高い",
+      "sources": [
+        "https://claude.com/product/claude-code",
+        "https://claude.com/pricing"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 5,
+        "coding": 5,
+        "creative": 2,
+        "research": 2,
+        "action": 4,
+        "value": 3
+      }
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "url": "https://cursor.com/",
+      "provider": "Anysphere, Inc.（現 SpaceX／SpaceXAI 傘下）",
+      "category": "コード生成",
+      "also_in": [],
+      "character": "並列で班を回す敏腕班長",
+      "summary": "コードベース全体を横断して複数ファイルを編集するエージェントを中核にした AI コードエディタ。現行は Grok・Cursor・X の統合サブスク「The X Subscription」の一部として販売される",
+      "main_models": "料金プール対象は Grok 4.7／4.6／4.5 と自社 Composer 2.5。他社モデル（Claude、GPT、Gemini 系等）は Premium 以上で API 定価の従量課金",
+      "capabilities": [
+        "Agent（コードベース検索・ファイル読み書き・ターミナル実行・ブラウザ操作を行う自律エージェント）",
+        "Projects（計画を立て複数エージェントへ委任する大きな仕事向けの仕組み）",
+        "Cloud Agents／Automations（Premium 以上）",
+        "コードベース検索（意味検索で関連コードを横断取得）",
+        "Tab 補完と部分編集",
+        "Checkpoints（変更前の自動スナップショットと全ファイル巻き戻し）",
+        "Bugbot（GitHub PR の AI コードレビュー、Premium 以上）",
+        "Rules と AGENTS.md によるプロジェクト規約の常駐化",
+        "CLI、Slack・GitHub 連携"
+      ],
+      "strengths": [
+        "コードベース全体の検索・横断編集を前提に設計され、複数ファイルにまたがるリファクタリングや機能追加を主用途に据えている",
+        "Checkpoints の巻き戻しと Projects／Cloud Agents の作業分割・並列実行で大規模タスクでも破綻しにくい",
+        "Rules と AGENTS.md で命名・スタイル・設計方針を常駐コンテキスト化でき複数ファイル間の一貫性を保ちやすい",
+        "選択できるモデルの幅が広い（他社モデルは従量課金）"
+      ],
+      "weaknesses": [
+        "料金体系が The X Subscription への統合で複雑化し、使用量プールは Grok と共有の週次リフレッシュ制",
+        "Plus（$8）では他社モデル・Cloud Agents・Bugbot 等が使えず実質 Grok 系＋Composer の固定設定のみ",
+        "他社モデルは API 定価の従量課金で使い方次第でサブスク料を大きく上回り得る",
+        "意味検索ベースの文脈取得は依存関係の厳密な影響範囲解析までは保証しない（二次情報の指摘）"
+      ],
+      "pricing": "The X Subscription として販売（公式料金ページ・公式ドキュメントで確認）。Free $0（Agent 制限付き）/ Plus $8/月（自社系モデルのみ）/ Premium $30/月（プール4倍、Cloud Agents 等を解放、他社モデル従量可）/ Super $100/月（プール15倍）/ Ultra $200/月（プール50倍）。有料は Grok と共有の週次プール制で、他社モデル分はプリペイドクレジットで支払う。旧 Pro $20 は既存ユーザー向けレガシー",
+      "platforms": [
+        "デスクトップ IDE（macOS／Windows／Linux、VS Code 系フォーク）",
+        "CLI",
+        "Web（Cloud Agents）",
+        "Slack・GitHub 上のエージェント面"
+      ],
+      "cautions": "プライバシーモード無効時のコード保持・利用条件は設定と Security ページで確認が前提。Grok の利用も同じ週次プールを消費する点に注意。買収とプラン移行が直近で旧プラン前提の古い情報が大量に残っている。他社モデルへのアクセス条件は変動しやすく利用時点で公式モデル表の再確認が必要",
+      "sources": [
+        "https://cursor.com/",
+        "https://cursor.com/pricing",
+        "https://cursor.com/docs/models",
+        "https://cursor.com/docs/agent"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 4,
+        "coding": 5,
+        "creative": 2,
+        "research": 2,
+        "action": 4,
+        "value": 3
+      }
+    },
+    {
+      "id": "windsurf",
+      "name": "Windsurf（現 Devin Desktop）",
+      "url": "https://windsurf.com/",
+      "provider": "Cognition, Inc.",
+      "category": "コード生成",
+      "also_in": [],
+      "character": "エージェント部隊の司令塔",
+      "summary": "Cognition の AI IDE。Windsurf の後継として Devin Desktop に改称し、ローカルエージェント「Devin Local」とクラウドの自律エージェント「Devin」を、1つの司令塔（Agent Command Center）から管理する形態に進化した",
+      "main_models": "自社 SWE ファミリー（最新は SWE-2、Pro では追加料金なし。他に SWE-1.7 等と Tab 補完用の SWE-1-mini、文脈検索用の swe-grep）。他社フロンティアモデル（OpenAI、Claude、Gemini、SpaceXAI 等）も選択可能で、課金はモデルのトークンコストに基づく",
+      "capabilities": [
+        "Devin Local（Cascade の後継ローカルエージェント。複数ファイルの読み書き・編集、ターミナル操作、サブエージェント対応）",
+        "Agent Command Center（ローカル／クラウドの全エージェントを Kanban で一元管理）",
+        "Spaces（セッション・PR・ファイル・文脈をエージェント間で共有）",
+        "ACP 対応（Codex や Claude Agent など他社エージェントを内蔵実行）",
+        "Tab 補完とインライン編集（Free でも無制限）",
+        "DeepWiki（コードベースの Wiki 化）",
+        "Fast Context（自社モデルによる高速な文脈検索）",
+        "Rules（.devin/rules 等、AGENTS.md や .cursor/rules の取り込みにも対応）",
+        "Devin Cloud への委任、MCP 対応"
+      ],
+      "strengths": [
+        "ローカルとクラウドのエージェントを横断管理でき、大きなタスクを複数エージェントに分割して並行実行し PR 単位でレビューできる編成力",
+        "Spaces でセッションをまたいで文脈を共有でき複数エージェント間の一貫性を保ちやすい",
+        "DeepWiki と Fast Context の二段構えでコードベース全体の構造把握と関連コード取得が強い",
+        "自社 SWE-2 が Pro（$20）で追加料金なしに使え他社モデルも同じ画面で切り替えられる",
+        "Windsurf／VS Code の設定と後方互換があり移行コストが低い"
+      ],
+      "weaknesses": [
+        "ブランド移行期で製品名・ドキュメント配置・課金単位（クォータ制／旧クレジット制／Enterprise の ACU）が併存し情報が追いにくい",
+        "有料プランのクォータ消費はモデル・タスク規模・推論量で変動し残量の予測がしにくい",
+        "JetBrains プラグインはメンテナンスモード",
+        "Max は $200/月と個人向けとしては高額"
+      ],
+      "pricing": "現行 Devin のプラン表で確認（公式料金ページ）。Free $0（エージェントは軽いクォータ、Tab 補完とインライン編集は無制限）/ Pro $20/月（クォータ増量、全モデル利用可、SWE-2 無料利用、Devin Cloud へのアクセス）/ Max $200/月 / Teams $80/月＋$40/席 / Enterprise 個別見積もり。有料枠は日次・週次でリフレッシュするクォータ制",
+      "platforms": [
+        "デスクトップ IDE（macOS／Windows／Linux、アプリ名は「Devin」）",
+        "Devin CLI",
+        "Web（Devin Cloud）",
+        "SSH・Dev Containers によるリモート開発"
+      ],
+      "cautions": "改称に伴いアプリ名が Devin に変わるため、組織の端末管理で Windsurf のみを許可している場合は許可リストの更新が必要（公式 FAQ）。課金単位がプラン世代で異なるため契約中の単位と消費レートを事前に確認すること。Windsurf 時代の旧仕様情報が多く現行仕様と混同しやすい",
+      "sources": [
+        "https://windsurf.com/",
+        "https://windsurf.com/pricing",
+        "https://devin.ai/blog/windsurf-is-now-devin-desktop",
+        "https://docs.devin.ai/desktop/devin-desktop-faq"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 4,
+        "coding": 5,
+        "creative": 2,
+        "research": 2,
+        "action": 5,
+        "value": 3
+      }
+    },
+    {
+      "id": "copilot",
+      "name": "Microsoft Copilot",
+      "url": "https://copilot.microsoft.com/",
+      "provider": "Microsoft",
+      "category": "汎用チャット",
+      "also_in": [],
+      "character": "おっちょこちょいのお調子者",
+      "summary": "Windows・Edge・Office の隅々に入り込んだ、Microsoft の消費者向け汎用AIアシスタント。中身は主に OpenAI のモデルで、モデル名ではなく「会話モード」で使い分ける設計。Microsoft 365 Copilot（法人向け）や Muse とは別製品",
+      "main_models": "Microsoft が選定するモデル群（モデル名は原則非開示）。公式サポートで確認できる範囲では Smart モードが GPT-5、Think Deeper が OpenAI の最新推論モデル。一部機能に自社の MAI 系モデルも採用され始めている",
+      "capabilities": [
+        "AIチャット（会話モード5種、Quick response／Think Deeper／Study and learn／Smart／Search）",
+        "Web検索連携（Bing 基盤、出典リンク付き）",
+        "画像生成・編集",
+        "ファイルアップロードと解析（1会話あたり最大20ファイル・各50MB）",
+        "Copilot Voice（音声会話）",
+        "Copilot Vision（画面やカメラを見て助言）",
+        "Copilot Pages（回答を編集できるキャンバス）",
+        "Deep Research（プラン依存）",
+        "コネクタ（OneDrive、Outlook、Gmail、Google Drive 等）",
+        "Microsoft 365 アプリ内での利用（対象サブスク時）"
+      ],
+      "strengths": [
+        "Windows、Edge、Microsoft 365 アプリと OS・日常アプリへの組み込みが最も深く、別途ツールを契約しなくても触れる範囲が広い",
+        "無料版でも Smart モード（GPT-5）や音声会話、Vision など主要機能に触れられる",
+        "Microsoft 365 を既に契約している人には追加費用なしで利用枠とアプリ連携が付いてくる",
+        "検索回答には出典が付きファイル解析や Pages など実務機能が揃う"
+      ],
+      "weaknesses": [
+        "使っているモデル名が原則非開示でモード選択しかできず、モデル透明性は ChatGPT や Claude より低い",
+        "有料化の仕組みが Microsoft 365 サブスクと一体で分かりにくい（旧 Copilot Pro は新規購入終了）",
+        "無料版は重い機能に利用上限があり具体的な数値は公式に明示されない項目が多い",
+        "Microsoft 365 Family では AI 特典がサブスクリプション所有者本人しか使えない"
+      ],
+      "pricing": "Free $0（機能・使用量に制限付き）。有料は Copilot 単体ではなく Microsoft 365 サブスクへの同梱が現行の形（公式料金ページで確認）で、Personal $9.99/月、Family $12.99/月（AI特典は所有者のみ）、Premium $19.99/月、Pro $99.99/月。単体の Copilot Pro（旧 $20/月）は新規購入を終了し、サポート終了は 2026-08-01（公式サポート）",
+      "platforms": [
+        "Web（copilot.microsoft.com）",
+        "Windows（アプリ／OS 組み込み）",
+        "Mac",
+        "iOS",
+        "Android",
+        "Edge（サイドバー）",
+        "Microsoft 365 アプリ内"
+      ],
+      "cautions": "モデルが非開示のため時期によって回答の傾向や品質が変わりうる。消費者向けでは会話データがモデル改善に使われる設定があり地域により既定でオンとされるため、機密情報の投入時は設定を確認すること。Microsoft 365 Copilot（法人向け）や Muse とは別製品で、法人向けのデータ保護は消費者向けには適用されない",
+      "sources": [
+        "https://copilot.microsoft.com/",
+        "https://www.microsoft.com/en-us/copilot/pricing/individuals-b",
+        "https://support.microsoft.com/en-us/microsoft-365-copilot/conversation-modes-in-microsoft-copilot",
+        "https://support.microsoft.com/en-US/Microsoft-365-Copilot/about-microsoft-copilot-pro"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 4,
+        "coding": 2,
+        "creative": 4,
+        "research": 4,
         "action": 4,
         "value": 4
       }
