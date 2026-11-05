@@ -1369,6 +1369,175 @@
         "action": 2,
         "value": 2
       }
+    },
+    {
+      "id": "deevid",
+      "name": "Deevid AI",
+      "url": "https://deevid.ai/",
+      "provider": "ALWAYS RISING PTE. LTD.（シンガポール）",
+      "category": "動画生成",
+      "also_in": [],
+      "character": "モデルを使い分ける何でも屋プロデューサー",
+      "summary": "他社の主要動画生成モデルを1つのサブスクリプションと共通クレジットで束ねた、動画中心のオールインワン制作プラットフォーム。自社モデルではなく「モデルへのアクセス＋制作ワークフロー」が製品",
+      "main_models": "自社の動画生成モデルは持たない。他社モデル群（Sora 2、Veo 3.1、Kling、Runway、Hailuo、Luma、Vidu、Pika、Wan 2.1、Haiper 等）を束ね、自社レイヤーとして Video Agent（AIディレクター）、Canvas、動画エディタを持つ",
+      "capabilities": [
+        "テキスト→動画・画像→動画・動画→動画",
+        "複数モデルの切り替えと比較生成",
+        "AI Video Agent による企画→生成→反復の自動化",
+        "Canvas での編集と内蔵動画エディタ",
+        "テンプレート／エフェクト100種以上",
+        "動画をまたいだキャラクター一貫性",
+        "AI Video Ads／Avatar／Music、画像生成・編集、音声生成"
+      ],
+      "strengths": [
+        "Veo、Kling、Runway、Sora 等を個別契約せず1つの課金・共通クレジットで使い分けられる",
+        "全有料プランで透かしなし・商用利用可（Full Commercial Use）が最低プランから付く",
+        "生成から編集・仕上げまでのワークフローが1サービス内で完結する",
+        "入口価格が低く、複数モデルのサブスクを重ねるより安く済むケースがある"
+      ],
+      "weaknesses": [
+        "画質・挙動の上限は選んだ他社モデル次第で、自社では品質を制御できない。モデルの提供終了・条件変更の影響をそのまま受ける",
+        "モデル別のクレジット消費量が公開されておらず実質コストが事前に読みにくい",
+        "出力は最大1080p（Lite は720pまで）",
+        "返金不可ポリシーが厳格"
+      ],
+      "pricing": "クレジット制サブスク（公式料金ページで直接確認）: Lite $14/月（年払い月換算 $10、200クレジット、720p）/ Pro $35/月（同 $25、600クレジット、1080p）/ Premium $159/月（同 $119、3,000クレジット、1080p）。全有料プランで透かしなし・Full Commercial Use。新規登録で20クレジット付与とされるが公式料金ページに無料プランの明記はなく二次情報による",
+      "platforms": [
+        "Web（deevid.ai）",
+        "iOS",
+        "Android"
+      ],
+      "cautions": "生成物の権利は利用規約でユーザー帰属と明記される一方、サービス改善目的のライセンス許諾条項があり、最終的な条件は各モデル提供元の規約にも左右され得る。支払いは原則返金不可（規約）と厳格なため無料分で試してから課金すること。使えるモデル群（ロースター）は上流の提供状況で入れ替わる",
+      "sources": [
+        "https://deevid.ai/",
+        "https://deevid.ai/pricing",
+        "https://deevid.ai/terms"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 3,
+        "coding": 1,
+        "creative": 5,
+        "research": 1,
+        "action": 3,
+        "value": 4
+      }
+    },
+    {
+      "id": "nijijourney",
+      "name": "niji・journey",
+      "url": "https://nijijourney.com/",
+      "provider": "Spellbrush（旧 Sizigi Studios）と Midjourney, Inc. の共同開発",
+      "category": "画像生成",
+      "also_in": [
+        "動画生成"
+      ],
+      "character": "アニメ部の作画監督",
+      "summary": "Spellbrush と Midjourney が共同開発するアニメ特化の画像生成サービス。niji の絵を最初の1フレームにしてアニメーション化する動画生成も備え、アニメの世界観のまま「絵が動く」体験に振り切っている",
+      "main_models": "画像は Niji 7（2026-01-09 公開、アニメ・東洋イラスト向けチューニング）。動画側のモデル名は未確認（niji 公式は公表していない。アカウント・サブスク・GPU時間・Web の Create 画面が Midjourney と完全共有で仕様も V1 Video Model と一致するため、実態は Midjourney V1 を niji の窓口から使う形態とみられるが、モデル同一性の公式明言はない）",
+      "capabilities": [
+        "テキスト→画像生成（アニメ・イラスト特化）",
+        "キャラクター参照・スタイル参照（sref）、パーソナライゼーション",
+        "画像編集（アップロード画像の編集、写真のアニメ化）",
+        "画像→動画（開始フレーム必須、5秒のモーション、終了フレーム指定／ループ、Extend）",
+        "アニメ OP のような複数カットの構成"
+      ],
+      "strengths": [
+        "アニメ・イラストの画風完成度は画像生成の中でも随一で、日本語テキスト描画の改善など日本市場向けの調整が続いている",
+        "画像→動画が同一サービス内で完結し、niji で描いたキャラをそのまま動かせる",
+        "Midjourney 本体と1つのサブスクで両方が使え、アカウントと生成物が同期する",
+        "モバイルアプリがあり初回20回の無料生成がある"
+      ],
+      "weaknesses": [
+        "動画は画像→動画専業でテキスト→動画は不可。開始フレームの絵が必須で1回のモーションは5秒起点と短い",
+        "動画の仕様情報が乏しく、モデル名・解像度などの niji 公式ドキュメントがない",
+        "Web／Discord には無料プラン・無料トライアルがない",
+        "公式APIがなく業務組み込み不可",
+        "Niji 7 ではキャラクター参照（--cref）が未対応"
+      ],
+      "pricing": "Midjourney と共通のサブスクリプション（niji 独自の Web プランはなし）: Basic $10/月 / Standard $30/月 / Pro $60/月 / Mega $120/月。動画目当ての場合の確実な入口は Web の Basic $10/月。モバイルアプリ限定の Mini $4.99/月と初回20回無料生成あり（二次情報）。動画の消費は Midjourney V1 と同じ GPU 時間制とみられる（niji 側の公式単価表記は未確認）",
+      "platforms": [
+        "Web（nijijourney.com）",
+        "Discord",
+        "iOS",
+        "Android"
+      ],
+      "cautions": "料金・権利条件は実質 Midjourney の規約・プラン体系に従う（年商 $100万超の企業は Pro／Mega 加入が条件。下位プランでは生成物が公開ギャラリーに出る）。「動画生成サービス」として単体で見ると誤解しやすく、動画の中身は Midjourney Video と共有基盤である点に注意",
+      "sources": [
+        "https://nijijourney.com/",
+        "https://nijijourney.com/blog/niji-video",
+        "https://nijijourney.com/blog/niji-7",
+        "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 2,
+        "coding": 1,
+        "creative": 5,
+        "research": 1,
+        "action": 2,
+        "value": 3
+      }
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity",
+      "url": "https://www.perplexity.ai/",
+      "provider": "Perplexity AI, Inc.",
+      "category": "AI検索",
+      "also_in": [],
+      "character": "出典を必ず添える俊足リサーチャー",
+      "summary": "出典リンク付きで即答する「回答エンジン」型AI検索の代表格。自社 Sonar と各社フロンティアモデルを使い分け、Deep Research からエージェント実行まで調査業務を広く担う",
+      "main_models": "既定は自社 Sonar 系（検索特化）。有料プランの Search では他社モデルも選択可能（Pro: GPT-6.1 Sol、Claude Sonnet 5.5、Gemini 3.8 Flash、Kimi K3、GLM 5.3、Grok 4.7 等。Max で GPT-6 Astra、Claude Opus 5.5 等が追加。公式ヘルプセンターの 2026-10-27 時点の表で、顔ぶれは変更されうると公式明記）",
+      "capabilities": [
+        "AI検索（全回答に出典・引用リンク付き、Pro Search で深度向上）",
+        "Deep Research（多段検索と推論によるレポート生成）",
+        "モデル選択（自動／手動、Thinking オプション）と Learn Mode",
+        "Model Council（Max、複数モデルに同時相談）",
+        "ファイル・画像のアップロードと分析",
+        "Projects（旧 Spaces、共同調査ワークスペース）",
+        "ファイルとアプリの作成",
+        "画像生成・動画生成（有料プラン）",
+        "Perplexity Computer（自律エージェント）",
+        "Comet ブラウザ",
+        "400以上のアプリコネクタ連携"
+      ],
+      "strengths": [
+        "全回答に出典リンクが付き情報の検証がしやすい",
+        "無料プランでも基本検索が実質無制限で入口が広い",
+        "有料では各社の最新モデルを検索に選べ Deep Research や Model Council など調査の深度を上げる仕組みが厚い",
+        "API が整備され自社プロダクトへ検索・回答生成を組み込める"
+      ],
+      "weaknesses": [
+        "個人向け有料プランの上限が「平均的利用」前提の週次／月次制限で、具体的な回数が公式に明示されない項目が多く残量が予測しにくい",
+        "無料プランは Pro Search 3回/日・Research 月1回と制限が強い",
+        "モデルの顔ぶれと提供条件の変更が頻繁",
+        "Max は月額 $200 と個人向けとしては高額"
+      ],
+      "pricing": "Free $0（基本検索は実質無制限、Pro Search 3回/日、Research 1回/月）/ Pro $20/月（年払い $200/年、公式料金ページの現行表示は月換算 $17 が前面）/ Max $200/月（年払い $2,000/年、Web申込のみ）。Enterprise Pro $40/席/月〜。API はサブスクと完全別課金の従量制（公式明記）",
+      "platforms": [
+        "Web（perplexity.ai）",
+        "iOS",
+        "Android",
+        "デスクトップ（macOS／Windows、Comet ブラウザ含む）",
+        "Chrome拡張機能",
+        "API"
+      ],
+      "cautions": "出典リンクは付くが引用元の内容と回答要約が一致しない場合や引用先自体の誤りはありうるため、重要な情報は一次ソースで確認すること。個人プランの利用上限は明示数値がない項目があり仕様変更も繰り返されている。モデルラインナップは頻繁に入れ替わる。API はサブスクに含まれず完全別課金",
+      "sources": [
+        "https://www.perplexity.ai/hub/pricing",
+        "https://www.perplexity.ai/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you",
+        "https://docs.perplexity.ai/docs/agent-api/models"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 4,
+        "coding": 2,
+        "creative": 3,
+        "research": 5,
+        "action": 4,
+        "value": 4
+      }
     }
   ]
 }
