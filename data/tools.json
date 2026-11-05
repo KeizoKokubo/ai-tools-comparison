@@ -920,6 +920,390 @@
         "action": 4,
         "value": 3
       }
+    },
+    {
+      "id": "seedance",
+      "name": "Seedance",
+      "provider": "ByteDance（ByteDance Seed）",
+      "category": "動画生成",
+      "character": "長回し自慢の撮影監督",
+      "summary": "音声と映像を同時生成し、1回最大30秒と多数の参照素材を扱える ByteDance の動画生成モデルファミリー（単体アプリはなく Dreamina 等のアプリか BytePlus API 経由で利用）",
+      "main_models": "Seedance 2.5（現行フラッグシップ、2026-07-31 公式発表）。2.0 系・1.5 Pro・1.0 Pro 系も API で提供継続",
+      "capabilities": [
+        "テキスト／画像／リファレンス→動画",
+        "音声と映像の同時生成",
+        "1回最大30秒の生成と延長による長尺構成",
+        "マルチモーダル参照（画像 最大30点・動画 最大10点・音声 最大10点）",
+        "タイムスタンプ単位の編集指定",
+        "480p／720p／1080p 出力"
+      ],
+      "strengths": [
+        "単一生成の長さ（30秒）と複数ショットをまたぐ一貫性",
+        "参照素材の量と種類の多さ",
+        "音声同時生成で分業の手間が少ない",
+        "API は公式価格表とクリップ単価の試算例が公開されコスト見積もりがしやすい"
+      ],
+      "weaknesses": [
+        "提供経路が分散し地域とプランで使えるモデル世代が異なり分かりにくい",
+        "公式APIは米国で利用不可とされる（二次情報）",
+        "Dreamina の料金表示は地域・キャンペーンで変動が大きい（二次情報）"
+      ],
+      "pricing": "Dreamina: 日次無料クレジットあり（日本225/日との公式発信）。有料はクレジット制（Basic 月1,575クレジット〜、月額表示は $15／$19 等の揺れあり・要公式再確認）。API（BytePlus ModelArk）: 従量制で Seedance 2.5 が $10.70/100万トークン（公式試算では5秒720p ≒ $1.156/クリップ）",
+      "platforms": [
+        "Web（Dreamina、Jimeng）",
+        "iOS",
+        "Android（Dreamina／CapCut／Doubao）",
+        "API（BytePlus ModelArk、火山引擎 Ark）"
+      ],
+      "cautions": "「Seedance」を名乗る非公式サイト・転売サービスが多い。公式の入口は seed.bytedance.com、Dreamina、BytePlus 等に限られる。地域制限が強く、日本から使えるモデル・プランは利用時点で要確認。商用利用や透かしは利用アプリ側のプランと規約で決まる",
+      "sources": [
+        "https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5",
+        "https://seed.bytedance.com/seedance2_5"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 2,
+        "coding": 1,
+        "creative": 5,
+        "research": 1,
+        "action": 4,
+        "value": 3
+      }
+    },
+    {
+      "id": "google-flow",
+      "name": "Google Flow",
+      "provider": "Google（Google Labs / Google DeepMind）",
+      "category": "動画生成",
+      "character": "編集まで面倒を見る映画スタジオの所長",
+      "summary": "Veo を映画制作のワークフローに落とし込んだ Google 公式の AI 映像制作スタジオ",
+      "main_models": "中核は Veo 3.1（Lite／Fast／Quality）。動画編集に Gemini Omni Flash、画像に Nano Banana 系を統合した「製品」（モデルではない）",
+      "capabilities": [
+        "テキスト→動画",
+        "Frames to Video（開始・終了フレーム指定）",
+        "Ingredients to Video（参照画像で一貫性）",
+        "Veo 3.1 のネイティブ音声生成",
+        "Extend（延長）",
+        "Scenebuilder（シーン組み立て）",
+        "動画編集",
+        "カメラコントロール",
+        "画像生成・編集の同居"
+      ],
+      "strengths": [
+        "生成→延長→シーン組み立て→編集まで1画面で完結する制作フロー",
+        "Ingredients による一貫性と音声同時生成",
+        "無料枠が毎日50クレジット付与",
+        "Google AI プランに含まれ Gemini 等と同一サブスクで使える"
+      ],
+      "weaknesses": [
+        "1クリップ最大8秒と短く長尺は継ぎ接ぎが前提",
+        "Veo 3.1 Quality は1生成100クレジットと試行錯誤のコストが高い",
+        "Web専用で Flow 自体の公開APIはない"
+      ],
+      "pricing": "Flow 専用料金はなく Google AI プランに含まれる。無料 $0（毎日50クレジット、繰り越し不可）/ AI Plus $4.99/月（+200クレジット）/ AI Pro $19.99/月（+1,000）/ AI Ultra $99.99/月〜（+10,000〜）。生成単価は Veo 3.1 Lite 10クレジット、Fast 20、Quality 100（公式ヘルプ）",
+      "platforms": [
+        "Web（flow.google.com）"
+      ],
+      "cautions": "18歳以上・対象地域が条件。クレジットは繰り越し不可で上限・単価は変更が頻繁。AIクレジットの追加購入は日本では対象外（公式ヘルプ）。生成物には SynthID 等の来歴情報が含まれる",
+      "sources": [
+        "https://support.google.com/flow/answer/16526234?hl=en&ref_topic=16908930"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 3,
+        "coding": 1,
+        "creative": 5,
+        "research": 1,
+        "action": 3,
+        "value": 4
+      }
+    },
+    {
+      "id": "midjourney-video",
+      "name": "Midjourney Video",
+      "provider": "Midjourney, Inc.",
+      "category": "動画生成",
+      "character": "静止画を動かす美術部エース",
+      "summary": "画像版 Midjourney の絵を最初の1フレームにして動かす、画像→動画専業のモデル（料金プランは画像版と共通）",
+      "main_models": "V1 Video Model（2025-06-18 公開、同社初の動画モデル。現行も公式ドキュメント上のモデル名）",
+      "capabilities": [
+        "画像→動画（生成画像の Animate、外部画像のアップロード）",
+        "1ジョブで5秒の動画を最大4本同時生成",
+        "Extend で最大21秒まで延長",
+        "モーション指定・終了フレーム指定・ループ生成",
+        "SD 480p 標準・HD 720p（Standard 以上、Fast のみ）",
+        "MP4／GIF 書き出し"
+      ],
+      "strengths": [
+        "画像版の画風・世界観をそのまま動画に引き継げる",
+        "同一サブスクで画像と動画の両方が使える",
+        "Pro／Mega では SD 動画が Relax で無制限"
+      ],
+      "weaknesses": [
+        "テキスト→動画不可で開始フレームの画像が必須",
+        "最大720p・音声なしとスペックでは他社に劣る",
+        "動画の GPU 時間消費が大きい（HD 4本で約26分）",
+        "公式APIなし"
+      ],
+      "pricing": "画像版と共通サブスク（無料枠なし）: Basic $10/月 / Standard $30/月 / Pro $60/月 / Mega $120/月。動画の GPU 消費目安: SD 4本＝8分、HD 4本＝26分（公式ドキュメント）",
+      "platforms": [
+        "Web（midjourney.com）",
+        "Discord"
+      ],
+      "cautions": "商用利用は有料プランの範囲で可能だが年商 $100万超の企業は Pro／Mega 加入が条件。Basic／Standard では生成物が公開ギャラリーに出る。外部画像は権利を持っていることが前提",
+      "sources": [
+        "https://docs.midjourney.com/hc/en-us/articles/37460773864589-Video",
+        "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans",
+        "https://updates.midjourney.com/introducing-our-v1-video-model/"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 2,
+        "coding": 1,
+        "creative": 4,
+        "research": 1,
+        "action": 1,
+        "value": 3
+      }
+    },
+    {
+      "id": "tunee",
+      "name": "Tunee",
+      "provider": "QUSTAR TECHNOLOGY PTE. LTD.（シンガポール）",
+      "category": "音楽生成",
+      "character": "相談に乗ってくれる音楽プロデューサー",
+      "summary": "プロンプトを書く代わりに AI音楽エージェントとチャットで相談しながら作る音楽生成サービス。MV生成と AIシンガー作成まで一貫",
+      "main_models": "会話型の自社「Music Agent」が中核（モデル選択式）。基盤となる音楽生成モデル自体の名称・版は未公表",
+      "capabilities": [
+        "チャット形式での楽曲生成と反復修正",
+        "ボーカル曲／インスト生成",
+        "ステム分離とスマートマスタリング",
+        "MV Studio（楽曲からMV作成）",
+        "AI Character（バーチャル音楽キャラクター作成）",
+        "著作権証明書の発行",
+        "Tunee Skills（外部エージェント基盤への接続）"
+      ],
+      "strengths": [
+        "対話型でプロンプト設計の知識がなくても詰められる",
+        "音楽・MV・キャラクターまで一貫制作",
+        "有料プランの権利条件が比較的明確（加入中の生成曲は完全・永続の商用権で解約後も失効しない）",
+        "日本語を含む多数の言語に対応"
+      ],
+      "weaknesses": [
+        "クレジット消費がモデル・複雑さ・入力長に左右されコスト予測が難しい",
+        "有料の入口価格が Suno 等より高め",
+        "基盤モデルの素性が開示されない",
+        "プラン表の価格・クレジット数が二次情報間で食い違う"
+      ],
+      "pricing": "無料あり（カード不要）。有料はクレジット制: Basic $18/月〜、Plus $38/月、Pro $89/月（月払い、二次情報）。Ultra の存在は App Store 課金一覧でのみ確認。公式料金ページのプラン表は動的表示で直接確認できず、価格・クレジット数は二次情報間で差異があるため要公式再確認",
+      "platforms": [
+        "Web（tunee.ai）",
+        "iOS"
+      ],
+      "cautions": "権利の二重構造が最大の注意点: 無料プランの曲は著作権が Tunee 側に帰属し非商用＋帰属表示のみ。有料加入中の生成曲は完全・永続の商用権。無料時代の曲の権利化枠はプランごとに1〜3曲まで。トップページの「full commercial license」の宣伝と FAQ の実条件に落差がある",
+      "sources": [
+        "https://www.tunee.ai/",
+        "https://www.tunee.ai/pricing",
+        "https://www.tunee.ai/terms-of-service"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 3,
+        "coding": 1,
+        "creative": 5,
+        "research": 1,
+        "action": 3,
+        "value": 2
+      }
+    },
+    {
+      "id": "google-flow-music",
+      "name": "Google Flow Music",
+      "provider": "Google（Google Labs / Google DeepMind）",
+      "category": "音楽生成",
+      "character": "最新機材持ちの音楽プロデューサー",
+      "summary": "AIプロデューサー「Producer」と対話しながらフルレングスのボーカル曲を作り、部分編集・カバー化・ステム書き出し・MV化まで行える Google の音楽制作スタジオ（動画の Google Flow とは別製品で Flow ファミリーの一員）",
+      "main_models": "Lyria 3.5（現行の旗艦・既定）。作詞の Ghostwriter、進行役の Producer エージェント、MV生成に Gemini Omni／Veo 系を併用",
+      "capabilities": [
+        "テキスト／画像／音声プロンプトからの楽曲生成",
+        "Producer エージェントとの対話編集",
+        "セクション単位の精密編集",
+        "Remix（Extend／Cover／Replace）",
+        "ダウンロード（MP3／WAV／M4A）とステム書き出し",
+        "プレイリスト公開・共有",
+        "Gemini Omni によるMV制作"
+      ],
+      "strengths": [
+        "最新音楽モデル Lyria 3.5 にいち早く触れられる",
+        "無料でも中核機能がほぼ全部入りでプラン差は実質クレジット量と同時生成数だけ",
+        "Google AI プラン加入者は追加契約なしに特典が使える",
+        "部分編集と Covers で「作った後の直しやすさ」が強い"
+      ],
+      "weaknesses": [
+        "商用利用の可否が公式の公開ページで明言されていない",
+        "無料プランのデイリークレジット量が非公開",
+        "専用プランと Google AI プランの二重の価格体系で入り口が分かりにくい"
+      ],
+      "pricing": "専用サブスク（公式料金ページで直接確認、表示は年払い時の月換算）: Free $0（デイリー付与・量は非公開）/ Starter $6/月（月3,000クレジット）/ Plus $18/月（月10,000）/ Member $48/月（月30,000）。Google AI Plus／Pro／Ultra 加入者は相当特典がそのまま使える",
+      "platforms": [
+        "Web（flowmusic.app）",
+        "iOS"
+      ],
+      "cautions": "商用利用の明文が公式で確認できないことが最大の注意点（所有権を主張しない旨は一般規約にあるが商用可否とは別問題。二次情報でも見解が割れるため未確認として扱う）。18歳以上・対象地域の条件あり。Google AI プランの特典は初回ログイン時の手動チェックが必要",
+      "sources": [
+        "https://www.flowmusic.app/",
+        "https://www.flowmusic.app/pricing",
+        "https://blog.google/innovation-and-ai/models-and-research/google-labs/lyria-3-5/"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 4,
+        "coding": 2,
+        "creative": 5,
+        "research": 1,
+        "action": 3,
+        "value": 4
+      }
+    },
+    {
+      "id": "elevenlabs-sfx",
+      "name": "ElevenLabs Sound Effects",
+      "provider": "ElevenLabs, Inc.",
+      "category": "効果音生成",
+      "character": "フォーリーアーティストな音響職人",
+      "summary": "テキストで音を説明すると最大30秒の効果音を1回で4バリエーション生成する、ElevenLabs の効果音専用機能（全体のクレジットを共有）",
+      "main_models": "SFX v2（既定）、SFX v3（2026-10-29 発表、限定提供）（いずれも公式引用の二次情報）",
+      "capabilities": [
+        "テキストプロンプト（最大450文字）からの効果音生成",
+        "1回で4バリエーション提示",
+        "長さ指定 0.5〜30秒",
+        "シームレスループ生成",
+        "prompt_influence（忠実度）調整",
+        "MP3／WAV 48kHz 出力"
+      ],
+      "strengths": [
+        "効果音専用モデルとしての完成度と素材選びの速さ",
+        "音声合成等と同じアカウント・クレジットで使える",
+        "API が整備されデータレジデンシーの選択肢がある（二次情報）"
+      ],
+      "weaknesses": [
+        "最大30秒と短く長い環境音はループ前提",
+        "クレジット消費の単価表記が公式内でも一貫していない",
+        "SFX v3 は限定提供で使えない場合がある",
+        "制御はテキストのみ"
+      ],
+      "pricing": "効果音単体プランはなく ElevenLabs 全体のサブスクの月間クレジットを共有（二次情報）: Free $0（10,000クレジット）/ Starter $6 / Creator $22 / Pro $99 / Scale $299 / Business $990。効果音の消費は公式料金ページで「約200クレジット/生成」、API は $0.12/分とされるが、ドキュメント側の単価表記と換算が一致しない点に注意",
+      "platforms": [
+        "Web（ElevenCreative アプリ）",
+        "API（REST）"
+      ],
+      "cautions": "商用利用は有料プランのみ。Free は個人・非商用のみで帰属表示が必要とされる（二次情報）。クレジットは音声合成・音楽等と共有プールのため他機能の利用で目減りする。単価表記の揺れがあるため大量生成前に小規模に実測すること。本項目は調査環境から公式サイトへ直接アクセスできず公式引用の二次資料に基づくため、利用前に公式再確認を推奨",
+      "sources": [
+        "https://www.stork.ai/blog/elevenlabs-sound-effects-2026",
+        "https://getcartsignal.com/tools/elevenlabs"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 3,
+        "coding": 1,
+        "creative": 5,
+        "research": 1,
+        "action": 4,
+        "value": 3
+      }
+    },
+    {
+      "id": "stable-audio",
+      "name": "Stable Audio",
+      "provider": "Stability AI",
+      "category": "効果音生成",
+      "character": "ライセンスに几帳面な音響エンジニア",
+      "summary": "学習データが全てライセンス済みであることを公式が掲げるテキスト→オーディオ生成。音楽と効果音を同じ基盤で扱い、最大約6分の生成、DAWプラグイン、API、オープンウェイトの自己ホストまでをカバー",
+      "main_models": "Stable Audio 3.0 ファミリー（Small SFX＝効果音専用・オープンウェイト、Small、Medium、Large）。ホスト型APIには 2.5 も残る",
+      "capabilities": [
+        "テキストからの効果音・音楽生成（最大約6分）",
+        "効果音専用モデル Small SFX の自己ホスト",
+        "音声アップロードを起点にした生成・編集",
+        "DAWプラグインでの生成",
+        "API 経由の text-to-audio 等"
+      ],
+      "strengths": [
+        "学習データがライセンス済み（AudioSparx＋Freesound）と公式が明示し権利面の説明が手厚い",
+        "効果音専用のオープンモデルを自前ホストでき生成回数の上限から自由になれる",
+        "ElevenLabs（最大30秒）より長く環境音ベッドに向く",
+        "解約後も有料期間中に作った音声のライセンスが維持される（公式FAQ）"
+      ],
+      "weaknesses": [
+        "主軸は音楽生成で効果音は兼用の位置づけ",
+        "2026-08 のリニューアルでプラン体系が全面変更され旧情報が大量に残っている",
+        "クレジットは繰り越しなし",
+        "オープンウェイトの商用利用は Community License の収益条件に縛られる"
+      ],
+      "pricing": "ホスト型サブスク（公式料金ページで直接確認）: Free $0（50クレジット）/ Solo $12（660）/ Session $30（1,800）/ Producer $90（6,000）/ Studio $199（14,000）。全プランに Web アプリと DAW プラグインを含み、料金ページ上は全プラン Commercial license 表示。開発者API は 8クレジット/回（$0.08、2026-10 改定、二次情報）。オープンウェイトは年商 $1M 未満の組織は商用可（Community License）",
+      "platforms": [
+        "Web（stableaudio.com）",
+        "DAWプラグイン",
+        "API",
+        "自己ホスト（Hugging Face）"
+      ],
+      "cautions": "ライセンスの読み分けが必須: ホスト型の商用ライセンス、API の条件、オープンウェイトの Community License（年商 $1M の境界）は別物。無料プランの商用可否は情報源で記述が割れている時期があり、商用案件では現行の利用規約で必ず確認すること。旧体系（〜2026-08）の料金・権利情報は失効している可能性が高い",
+      "sources": [
+        "https://stableaudio.com/pricing",
+        "https://stability.ai/explainers"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 2,
+        "coding": 1,
+        "creative": 5,
+        "research": 1,
+        "action": 4,
+        "value": 4
+      }
+    },
+    {
+      "id": "audiocraft-audiogen",
+      "name": "Meta AudioCraft（AudioGen）",
+      "provider": "Meta（Facebook Research / FAIR）",
+      "category": "効果音生成",
+      "character": "研究室のサウンド実験家",
+      "summary": "Meta の研究チームが公開するオーディオ生成ライブラリのうち、テキスト→効果音を担うモデル。自前GPUで動かす研究・実験用の実装であり、商用サービスではない",
+      "main_models": "AudioGen（facebook/audiogen-medium、1.5B パラメータ）。AudioCraft ライブラリには MusicGen、EnCodec 等も含む",
+      "capabilities": [
+        "テキストプロンプトからの環境音・効果音生成",
+        "生成パラメータ（長さ、top-k／top-p、temperature）の細かい制御",
+        "学習パイプラインも公開され再学習・微調整の土台にできる",
+        "音声継続（audio continuation）"
+      ],
+      "strengths": [
+        "コードと重みが公開され仕組みを検証しながら使える透明性",
+        "ローカル実行のため生成回数・データ送信の制約がない",
+        "研究コミュニティが大きく派生実装・知見が豊富"
+      ],
+      "weaknesses": [
+        "商用利用ができない（モデル重みが CC-BY-NC 4.0）",
+        "ホスト型サービスがなく GPU（VRAM 16GB 以上が目安）を含む環境構築が前提",
+        "生成は 16kHz で音質の上限が低く、生成長は既定10秒程度と短い"
+      ],
+      "pricing": "ソフトウェア・重みとも無償（MIT／CC-BY-NC の範囲）。費用は自前GPUまたはクラウドGPUの計算コストのみ。Meta 公式のホスト型有料プランは存在しない",
+      "platforms": [
+        "自己ホスト（Python、PyTorch）",
+        "Hugging Face（重み配布）"
+      ],
+      "cautions": "ライセンスの二重構造が最大の注意点: コードは MIT だがモデル重みは CC-BY-NC 4.0（非商用）。「オープンソースだから商用OK」という誤解をしやすく、生成物を商用作品に使うことはライセンス上認められない。研究用実装のためサポートや品質保証はない",
+      "sources": [
+        "https://github.com/facebookresearch/audiocraft",
+        "https://github.com/facebookresearch/audiocraft/blob/main/docs/AUDIOGEN.md"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 2,
+        "coding": 3,
+        "creative": 3,
+        "research": 1,
+        "action": 2,
+        "value": 2
+      }
     }
   ]
 }
