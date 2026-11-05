@@ -32,8 +32,10 @@
     {
       "id": "chatgpt",
       "name": "ChatGPT",
+      "url": "https://chatgpt.com/",
       "provider": "OpenAI",
       "category": "汎用チャット",
+      "also_in": [],
       "character": "何でも首席の優等生",
       "summary": "文章・推論・コード・画像・音声・エージェント実行までをカバーする汎用チャットAIの代表格",
       "main_models": "GPT-6 ファミリー（有料チャット向け GPT-6 Sol、無料／Go 向け GPT-6 Luna 等は二次情報）",
@@ -87,8 +89,10 @@
     {
       "id": "claude",
       "name": "Claude",
+      "url": "https://claude.ai/",
       "provider": "Anthropic",
       "category": "汎用チャット",
+      "also_in": [],
       "character": "寡黙で優秀なプログラマ",
       "summary": "長文読解とコーディングに強い、MCP の本家である汎用チャットAI",
       "main_models": "Fable（最上位）／Opus／Sonnet／Haiku 系統（バージョン 5.5 世代は二次情報）。コンテキスト最大 1M トークン（モデルにより変動）",
@@ -139,8 +143,13 @@
     {
       "id": "gemini",
       "name": "Gemini",
+      "url": "https://gemini.google.com/",
       "provider": "Google（Google DeepMind）",
       "category": "汎用チャット",
+      "also_in": [
+        "画像生成",
+        "動画生成"
+      ],
       "character": "学校中と顔が利く情報委員",
       "summary": "Google サービス群と一体化した、ネイティブ・マルチモーダルの汎用AI",
       "main_models": "Gemini 4 Argon（最上位、公式 Google One ページ表記）、3.1 Pro、Flash 系。画像＝Nano Banana 2、動画＝Veo 系、音楽＝Lyria 3.5",
@@ -190,8 +199,13 @@
     {
       "id": "grok",
       "name": "Grok",
+      "url": "https://grok.com/",
       "provider": "xAI",
       "category": "汎用チャット",
+      "also_in": [
+        "画像生成",
+        "動画生成"
+      ],
       "character": "ちょっと不良っぽいアウトサイダー",
       "summary": "X のリアルタイム情報を核とする、率直な回答傾向の汎用AI",
       "main_models": "Grok 4.7（API 公式ドキュメントのフラッグシップ。500k トークン文脈）。画像・動画＝Grok Imagine、音声＝Grok Voice",
@@ -241,8 +255,10 @@
     {
       "id": "runway",
       "name": "Runway",
+      "url": "https://runwayml.com/",
       "provider": "Runway",
       "category": "動画生成",
+      "also_in": [],
       "character": "映画部の部長",
       "summary": "制作ワークフロー全体をカバーする映像制作者向けAI動画スイート",
       "main_models": "Gen-4.5（旗艦）、Gen-4 / Gen-4 Turbo、Aleph（編集）、Act-Two（演技転送）",
@@ -285,8 +301,10 @@
     {
       "id": "kling",
       "name": "Kling",
+      "url": "https://kling.ai/",
       "provider": "快手（Kuaishou）",
       "category": "動画生成",
+      "also_in": [],
       "character": "勢いのある新進映像クリエイター",
       "summary": "長めのクリップと制御性、価格対性能に強みを持つ動画生成AI",
       "main_models": "Kling 3.0 系／4.0 系（4.0 は 2026-10 正式公開との情報）",
@@ -330,8 +348,10 @@
     {
       "id": "sora",
       "name": "Sora（提供終了）",
+      "url": null,
       "provider": "OpenAI",
       "category": "動画生成",
+      "also_in": [],
       "character": "未設定（歴史的参照）",
       "summary": "動画生成の水準を押し上げたが、2026年に提供終了した歴史的参照ツール",
       "main_models": "Sora 2 / Sora 2 Pro",
@@ -370,8 +390,10 @@
     {
       "id": "midjourney",
       "name": "Midjourney",
+      "url": "https://www.midjourney.com/",
       "provider": "Midjourney, Inc.",
       "category": "画像生成",
+      "also_in": [],
       "character": "美術部のエース",
       "summary": "芸術性・画風の完成度で定番の画像生成AI。短い動画生成も追加",
       "main_models": "V8 系（版表記は要公式再確認）",
@@ -412,8 +434,10 @@
     {
       "id": "gpt-image",
       "name": "ChatGPT 画像生成／GPT Image",
+      "url": "https://chatgpt.com/",
       "provider": "OpenAI",
       "category": "画像生成",
+      "also_in": [],
       "character": "未設定（ChatGPT の一機能として扱う）",
       "summary": "ChatGPT の会話の中で生成・編集できる画像生成機能",
       "main_models": "GPT Image 系（現行版名は表記が揺れており要再確認）",
@@ -455,8 +479,10 @@
     {
       "id": "flux",
       "name": "FLUX",
+      "url": "https://bfl.ai/",
       "provider": "Black Forest Labs",
       "category": "画像生成",
+      "also_in": [],
       "character": "自前工房を持つ写真家エンジニア",
       "summary": "API とオープンウェイトで使う開発者寄りの画像生成モデル群",
       "main_models": "FLUX.1／FLUX.2 ファミリー（pro／flex／max、編集特化 Kontext 系）。一部は重み公開",
@@ -499,8 +525,10 @@
     {
       "id": "suno",
       "name": "Suno",
+      "url": "https://suno.com/",
       "provider": "Suno, Inc.",
       "category": "音楽生成",
+      "also_in": [],
       "character": "軽音部の人気者",
       "summary": "歌詞とスタイル指定からボーカル入り楽曲を丸ごと生成する音楽AI",
       "main_models": "v5.5〜v6 世代（表記差あり、要再確認）。上位にブラウザ DAW「Suno Studio」",
@@ -541,8 +569,10 @@
     {
       "id": "udio",
       "name": "Udio",
+      "url": "https://www.udio.com/",
       "provider": "Uncharted Labs",
       "category": "音楽生成",
+      "also_in": [],
       "character": "楽曲は一級品なのに表に出られない音楽家",
       "summary": "楽曲の質と編集機能に定評があったが、現在はダウンロード不可・非商用のみに転じた音楽生成AI",
       "main_models": "v1.5 / v1.5 Allegro 系（モデル更新の停滞が指摘される）",
@@ -581,8 +611,10 @@
     {
       "id": "canva-ai",
       "name": "Canva AI（旧 Magic Studio）",
+      "url": "https://www.canva.com/",
       "provider": "Canva",
       "category": "ビジュアル編集補助",
+      "also_in": [],
       "character": "文化祭実行委員の器用なまとめ役",
       "summary": "デザインツールに AI 機能群を統合した、非デザイナー向け制作基盤",
       "main_models": "自社機能＋第三者モデルの統合（モデル構成は非公開）",
@@ -625,8 +657,12 @@
     {
       "id": "firefly",
       "name": "Adobe Firefly",
+      "url": "https://firefly.adobe.com/",
       "provider": "Adobe",
       "category": "ビジュアル編集補助",
+      "also_in": [
+        "効果音生成"
+      ],
       "character": "プロ制作会社の職人",
       "summary": "Creative Cloud の制作フローに組み込まれた、商用安全性を掲げる生成AI",
       "main_models": "自社 Firefly モデル（画像・動画・ベクター・音声）＋パートナーモデル（Google／OpenAI／FLUX／Runway／Kling 等）",
@@ -671,8 +707,13 @@
     {
       "id": "muse",
       "name": "Muse",
+      "url": "https://muse.ai/",
       "provider": "Meta",
       "category": "パーソナルエージェント",
+      "also_in": [
+        "画像生成",
+        "動画生成"
+      ],
       "character": "専属の執事エージェント",
       "summary": "専用コンピューターを持ち、覚えて・考えて・実行する個人専属エージェント",
       "main_models": "Muse Spark / Muse Wonder（有料プランでは両モデルが使われる）",
@@ -720,8 +761,10 @@
     {
       "id": "manus",
       "name": "Manus",
+      "url": "https://manus.im/",
       "provider": "Butterfly Effect Pte. Ltd.（本社シンガポール）",
       "category": "汎用エージェント",
+      "also_in": [],
       "character": "分身を使いこなす仕事師",
       "summary": "タスクを丸投げすると完成品を納品する自律型エージェント",
       "main_models": "Manus 2.0 系（基盤は複数プロバイダーのモデルを統合するマルチモデル実行）",
@@ -769,8 +812,10 @@
     {
       "id": "genspark",
       "name": "Genspark",
+      "url": "https://www.genspark.ai/",
       "provider": "MainFunc, Inc.",
       "category": "汎用エージェント",
+      "also_in": [],
       "character": "専門家チームを束ねるプロデューサー",
       "summary": "成果物スイートと Super Agent を1契約にまとめたAIワークスペース",
       "main_models": "Mixture-of-Agents 方式で30以上のモデルを統括（廠商主張、二次経由）",
@@ -819,8 +864,10 @@
     {
       "id": "felo",
       "name": "Felo",
+      "url": "https://felo.ai/",
       "provider": "Felo株式会社（東京）",
       "category": "AI検索",
+      "also_in": [],
       "character": "言語の壁を越える調査員",
       "summary": "言語の壁を越える多言語検索を核に、資料作成まで一気通貫の日本発AI",
       "main_models": "自社基盤モデルではなく各社の SOTA モデルを束ねて提供（テキスト＝GPT-6 Astra、Claude Fable、Grok 4.6 等。構成は随時更新）",
@@ -872,8 +919,10 @@
     {
       "id": "kiro",
       "name": "Kiro",
+      "url": "https://kiro.dev/",
       "provider": "AWS（Amazon Web Services）",
       "category": "開発特化",
+      "also_in": [],
       "character": "段取り完璧な開発ディレクター",
       "summary": "仕様（スペック）を文書化してから実装する、スペック駆動開発のエージェントIDE",
       "main_models": "デフォルトは Auto（モデルを混合しルーティング）。選択可能な例: GPT-5.6 系、Claude Opus 5／Sonnet 5 系、Haiku 4.5、DeepSeek 3.2、Qwen3 Coder Next 等（公式モデルページ）",
@@ -924,8 +973,10 @@
     {
       "id": "seedance",
       "name": "Seedance",
+      "url": "https://seed.bytedance.com/",
       "provider": "ByteDance（ByteDance Seed）",
       "category": "動画生成",
+      "also_in": [],
       "character": "長回し自慢の撮影監督",
       "summary": "音声と映像を同時生成し、1回最大30秒と多数の参照素材を扱える ByteDance の動画生成モデルファミリー（単体アプリはなく Dreamina 等のアプリか BytePlus API 経由で利用）",
       "main_models": "Seedance 2.5（現行フラッグシップ、2026-07-31 公式発表）。2.0 系・1.5 Pro・1.0 Pro 系も API で提供継続",
@@ -973,8 +1024,10 @@
     {
       "id": "google-flow",
       "name": "Google Flow",
+      "url": "https://flow.google.com/",
       "provider": "Google（Google Labs / Google DeepMind）",
       "category": "動画生成",
+      "also_in": [],
       "character": "編集まで面倒を見る映画スタジオの所長",
       "summary": "Veo を映画制作のワークフローに落とし込んだ Google 公式の AI 映像制作スタジオ",
       "main_models": "中核は Veo 3.1（Lite／Fast／Quality）。動画編集に Gemini Omni Flash、画像に Nano Banana 系を統合した「製品」（モデルではない）",
@@ -1021,8 +1074,10 @@
     {
       "id": "midjourney-video",
       "name": "Midjourney Video",
+      "url": "https://www.midjourney.com/",
       "provider": "Midjourney, Inc.",
       "category": "動画生成",
+      "also_in": [],
       "character": "静止画を動かす美術部エース",
       "summary": "画像版 Midjourney の絵を最初の1フレームにして動かす、画像→動画専業のモデル（料金プランは画像版と共通）",
       "main_models": "V1 Video Model（2025-06-18 公開、同社初の動画モデル。現行も公式ドキュメント上のモデル名）",
@@ -1069,8 +1124,10 @@
     {
       "id": "tunee",
       "name": "Tunee",
+      "url": "https://www.tunee.ai/",
       "provider": "QUSTAR TECHNOLOGY PTE. LTD.（シンガポール）",
       "category": "音楽生成",
+      "also_in": [],
       "character": "相談に乗ってくれる音楽プロデューサー",
       "summary": "プロンプトを書く代わりに AI音楽エージェントとチャットで相談しながら作る音楽生成サービス。MV生成と AIシンガー作成まで一貫",
       "main_models": "会話型の自社「Music Agent」が中核（モデル選択式）。基盤となる音楽生成モデル自体の名称・版は未公表",
@@ -1119,8 +1176,10 @@
     {
       "id": "google-flow-music",
       "name": "Google Flow Music",
+      "url": "https://www.flowmusic.app/",
       "provider": "Google（Google Labs / Google DeepMind）",
       "category": "音楽生成",
+      "also_in": [],
       "character": "最新機材持ちの音楽プロデューサー",
       "summary": "AIプロデューサー「Producer」と対話しながらフルレングスのボーカル曲を作り、部分編集・カバー化・ステム書き出し・MV化まで行える Google の音楽制作スタジオ（動画の Google Flow とは別製品で Flow ファミリーの一員）",
       "main_models": "Lyria 3.5（現行の旗艦・既定）。作詞の Ghostwriter、進行役の Producer エージェント、MV生成に Gemini Omni／Veo 系を併用",
@@ -1168,8 +1227,10 @@
     {
       "id": "elevenlabs-sfx",
       "name": "ElevenLabs Sound Effects",
+      "url": "https://elevenlabs.io/",
       "provider": "ElevenLabs, Inc.",
       "category": "効果音生成",
+      "also_in": [],
       "character": "フォーリーアーティストな音響職人",
       "summary": "テキストで音を説明すると最大30秒の効果音を1回で4バリエーション生成する、ElevenLabs の効果音専用機能（全体のクレジットを共有）",
       "main_models": "SFX v2（既定）、SFX v3（2026-10-29 発表、限定提供）（いずれも公式引用の二次情報）",
@@ -1215,8 +1276,10 @@
     {
       "id": "stable-audio",
       "name": "Stable Audio",
+      "url": "https://stableaudio.com/",
       "provider": "Stability AI",
       "category": "効果音生成",
+      "also_in": [],
       "character": "ライセンスに几帳面な音響エンジニア",
       "summary": "学習データが全てライセンス済みであることを公式が掲げるテキスト→オーディオ生成。音楽と効果音を同じ基盤で扱い、最大約6分の生成、DAWプラグイン、API、オープンウェイトの自己ホストまでをカバー",
       "main_models": "Stable Audio 3.0 ファミリー（Small SFX＝効果音専用・オープンウェイト、Small、Medium、Large）。ホスト型APIには 2.5 も残る",
@@ -1264,8 +1327,10 @@
     {
       "id": "audiocraft-audiogen",
       "name": "Meta AudioCraft（AudioGen）",
+      "url": "https://github.com/facebookresearch/audiocraft",
       "provider": "Meta（Facebook Research / FAIR）",
       "category": "効果音生成",
+      "also_in": [],
       "character": "研究室のサウンド実験家",
       "summary": "Meta の研究チームが公開するオーディオ生成ライブラリのうち、テキスト→効果音を担うモデル。自前GPUで動かす研究・実験用の実装であり、商用サービスではない",
       "main_models": "AudioGen（facebook/audiogen-medium、1.5B パラメータ）。AudioCraft ライブラリには MusicGen、EnCodec 等も含む",
