@@ -1830,6 +1830,69 @@
         "action": 4,
         "value": 4
       }
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral Vibe（旧 Le Chat）",
+      "url": "https://chat.mistral.ai/",
+      "provider": "Mistral AI（フランス・パリ）",
+      "category": "汎用チャット",
+      "also_in": [],
+      "character": "パリ生まれの俊足な猫系オープン派",
+      "summary": "フランス発・オープンウェイト志向の汎用チャット／エージェント。旧称 Le Chat。チャットに仕事用エージェント（Work Mode）とコーディングエージェント（Code Mode）を同梱し、EU 域内ホスティングと高速応答を売りにする",
+      "main_models": "フラッグシップ系 Mistral モデル群。現行フラッグシップは Mistral Large 4（2026-10、オープンウェイト、MoE 52B active／総1.05T、1Mコンテキスト）。改称時の既定だった Medium 3.5（推論 Magistral とコード Devstral を統合）は API ドキュメント上で deprecated となり、Vibe の現在の既定モデルの公式明示はない（未確認）。他に Small 系、Ministral 系、音声の Voxtral、コード特化の Codestral／Devstral 系",
+      "capabilities": [
+        "AIチャット（Chat モード、Work Mode へ統合予定と公式発表）",
+        "Work Mode（計画提示→承認→コネクタ横断で実行するタスクエージェント）",
+        "Web検索（出典付き）と Deep Research",
+        "画像生成・編集",
+        "Canvas",
+        "ドキュメント作成・編集（スプレッドシート、スライド、PDF 等）",
+        "音声モード（Voxtral）",
+        "コネクタ100種以上とカスタム MCP コネクタ",
+        "タスクスケジューリング、Skills、Workflows",
+        "Code Mode／Vibe for code（リモートコーディングエージェント、CLI、VS Code 拡張）"
+      ],
+      "strengths": [
+        "フラッグシップ級モデルをオープンウェイトで公開しており API 経由でも自前ホストでも使え、ベンダーロックインが弱い",
+        "Pro が $14.99/月と主要各社の標準価格（$20）より安く学生は $5.99/月",
+        "高速応答（Flash Answers）で知られる俊足ぶり",
+        "データの既定ホスティングが EU 域内で GDPR を前提にした設計。Enterprise ではオンプレ／プライベート配置も可能",
+        "多言語、特に欧州言語の扱いを重視（Large 4 は160以上の言語で学習）",
+        "全プランに API クレジットが含まれ Free でもコネクタ100種以上が使える"
+      ],
+      "weaknesses": [
+        "改称と再編の移行期で名称体系が分かりにくい（Le Chat／Vibe／Mistral Code が並行して流通し、Mistral Code 拡張は廃止予定）",
+        "コネクタ類が beta 表記で連携エコシステムは米系大手に比べ発展途上",
+        "無料プランの上限は「Limited」表記のみで具体的な回数が明示されない",
+        "モデルの世代交代が速く API 前提の運用では廃止サイクルへの追随が必要",
+        "無料・Pro では入出力が既定でモデル学習に使われうる（Pro 以上はオプトアウト可）"
+      ],
+      "pricing": "Free $0（メッセージ・検索・コーディングセッションは制限付き、コネクタ100種以上は無料でも利用可）/ Pro $14.99/月（メッセージ最大6倍、画像生成40倍、終日コーディング、APIクレジット $25.5/月分、学習オプトアウト可。学生は $5.99/月）/ Team $24.99/ユーザー/月 / Enterprise 個別見積もり。API は従量課金（Mistral AI Studio）",
+      "platforms": [
+        "Web（chat.mistral.ai）",
+        "iOS",
+        "Android",
+        "CLI",
+        "IDE（VS Code 拡張、JetBrains／Zed は ACP 経由）",
+        "API（Mistral AI Studio）"
+      ],
+      "cautions": "無料・Pro では入出力データが既定でモデル学習に使われうるため、機密情報を扱う場合はオプトアウト設定や Team／Enterprise の条件を確認すること。オープンウェイトのライセンスはモデルごとに異なり、商用形態によっては個別条件の確認が必要。「EU 域内ホスティング」は既定値の説明で、厳密なデータ主権が必要な案件では Enterprise の配置条件を確認すること。製品名・プラン・モデルは改称と世代交代が続いているため契約前に公式で再確認すること",
+      "sources": [
+        "https://mistral.ai/products/vibe",
+        "https://mistral.ai/pricing",
+        "https://mistral.ai/news/vibe-agent/",
+        "https://docs.mistral.ai/models/mistral-large-4-0"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 4,
+        "coding": 4,
+        "creative": 4,
+        "research": 3,
+        "action": 4,
+        "value": 5
+      }
     }
   ]
 }
