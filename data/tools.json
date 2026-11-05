@@ -1,0 +1,925 @@
+{
+  "title": "AIツール比較データ（公開版）",
+  "checked_date": "2026-11-05",
+  "note": "料金・モデル等は各社公式ページ等の公開情報に基づく（出典は各ツールに記載）。scores は調査に基づく編集部評価（1〜5）であり公式スペックではない。",
+  "axes": [
+    {
+      "id": "reasoning",
+      "label": "文章・推論"
+    },
+    {
+      "id": "coding",
+      "label": "コーディング"
+    },
+    {
+      "id": "creative",
+      "label": "創作・生成"
+    },
+    {
+      "id": "research",
+      "label": "調査・検索"
+    },
+    {
+      "id": "action",
+      "label": "連携・実行"
+    },
+    {
+      "id": "value",
+      "label": "コスパ"
+    }
+  ],
+  "tools": [
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT",
+      "provider": "OpenAI",
+      "category": "汎用チャット",
+      "character": "何でも首席の優等生",
+      "summary": "文章・推論・コード・画像・音声・エージェント実行までをカバーする汎用チャットAIの代表格",
+      "main_models": "GPT-6 ファミリー（有料チャット向け GPT-6 Sol、無料／Go 向け GPT-6 Luna 等は二次情報）",
+      "capabilities": [
+        "文章作成",
+        "推論",
+        "コーディング（Codex）",
+        "Web検索",
+        "Deep Research",
+        "ファイル解析",
+        "画像生成",
+        "音声会話",
+        "エージェント実行（Work）",
+        "カスタムGPT"
+      ],
+      "strengths": [
+        "機能の網羅性",
+        "連携先の多さ",
+        "利用者・事例の多さ",
+        "低価格プラン（Go）の存在"
+      ],
+      "weaknesses": [
+        "プラン・モデル名が頻繁に変わり分かりにくい",
+        "無料／Go は多くの市場で広告表示あり（二次情報）"
+      ],
+      "pricing": "Free $0 / Go $8/月 / Plus $20/月 / Pro $100/月〜 / Business $20/席（年払い） / Enterprise 個別見積（公式・USD・税別）",
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android",
+        "Windows",
+        "Mac",
+        "API"
+      ],
+      "cautions": "個人プランは学習利用が既定オンで、Data Controls でオプトアウト可能（Temporary Chat は対象外）。Business／Enterprise／API は既定で学習に使われない",
+      "sources": [
+        "https://openai.com/ja-JP/pricing/",
+        "https://developers.openai.com/api/docs/pricing",
+        "https://help.openai.com/ja-jp/articles/6950777-what-is-chatgpt-plus"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 5,
+        "coding": 5,
+        "creative": 4,
+        "research": 4,
+        "action": 4,
+        "value": 4
+      }
+    },
+    {
+      "id": "claude",
+      "name": "Claude",
+      "provider": "Anthropic",
+      "category": "汎用チャット",
+      "character": "寡黙で優秀なプログラマ",
+      "summary": "長文読解とコーディングに強い、MCP の本家である汎用チャットAI",
+      "main_models": "Fable（最上位）／Opus／Sonnet／Haiku 系統（バージョン 5.5 世代は二次情報）。コンテキスト最大 1M トークン（モデルにより変動）",
+      "capabilities": [
+        "長文読解",
+        "文章作成",
+        "コーディング（Claude Code）",
+        "Projects",
+        "Artifacts",
+        "ファイル作成とコード実行",
+        "Web検索",
+        "Research",
+        "音声"
+      ],
+      "strengths": [
+        "長文・コードの強さ",
+        "コネクタ／カスタムMCP が無料プラン含め広く使える"
+      ],
+      "weaknesses": [
+        "画像生成は公式プラン表に掲載なし",
+        "5時間＋週次の利用上限が分かりにくく Claude Code と枠を共有"
+      ],
+      "pricing": "Free $0 / Pro $20/月（年払い実質 $17/月）/ Max $100/月 / Ultra $200/月 / Team Standard $20/席（年払い）・Premium $100/席 / Enterprise $20/席＋API実費（公式・USD・税別）",
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android",
+        "Windows",
+        "Mac",
+        "API",
+        "ターミナル（Claude Code）"
+      ],
+      "cautions": "消費者向けはプライバシー設定で学習利用を管理。Team／Enterprise／API は既定で学習に使われない。フィードバック送信時は会話が学習対象になり得る",
+      "sources": [
+        "https://claude.ai/pricing",
+        "https://claude.com/ja/pricing"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 5,
+        "coding": 5,
+        "creative": 3,
+        "research": 4,
+        "action": 4,
+        "value": 3
+      }
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini",
+      "provider": "Google（Google DeepMind）",
+      "category": "汎用チャット",
+      "character": "学校中と顔が利く情報委員",
+      "summary": "Google サービス群と一体化した、ネイティブ・マルチモーダルの汎用AI",
+      "main_models": "Gemini 4 Argon（最上位、公式 Google One ページ表記）、3.1 Pro、Flash 系。画像＝Nano Banana 2、動画＝Veo 系、音楽＝Lyria 3.5",
+      "capabilities": [
+        "テキスト／画像／音声／動画のマルチモーダル処理",
+        "Deep Research",
+        "1Mトークンの長文脈（Pro以上）",
+        "Gmail／Docs／Sheets 組み込み",
+        "Chrome auto browse",
+        "エージェント実行",
+        "Notebook",
+        "コーディング支援"
+      ],
+      "strengths": [
+        "Google サービス・Android・Chrome との統合の深さ",
+        "料金にクラウドストレージを含みコスパが良い",
+        "長文脈と動画理解"
+      ],
+      "weaknesses": [
+        "プラン名とモデル名の対応が分かりにくい",
+        "機能の地域・言語差が大きい"
+      ],
+      "pricing": "Free $0（15GB）/ AI Plus $4.99（400GB）・日本公式 ¥725/月 / AI Pro $19.99（5TB）・日本公式 ¥2,900/月 / AI Ultra $99.99（5x）〜$199.99（20x）・日本公式 ¥14,500〜¥32,000/月",
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android",
+        "Chrome",
+        "Google Workspace 各アプリ",
+        "API（AI Studio／Vertex AI）"
+      ],
+      "cautions": "個人アカウントで Keep Activity オン時は会話がサービス改善に使われ一部は人間がレビュー。レビュー済みデータは最長3年保持され削除しても消えない（公式 Privacy Hub）。Workspace／API は学習に使われない規約",
+      "sources": [
+        "https://one.google.com/about/google-ai-plans/",
+        "https://gemini.google/jp/subscriptions/?hl=ja"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 5,
+        "coding": 4,
+        "creative": 5,
+        "research": 4,
+        "action": 4,
+        "value": 5
+      }
+    },
+    {
+      "id": "grok",
+      "name": "Grok",
+      "provider": "xAI",
+      "category": "汎用チャット",
+      "character": "ちょっと不良っぽいアウトサイダー",
+      "summary": "X のリアルタイム情報を核とする、率直な回答傾向の汎用AI",
+      "main_models": "Grok 4.7（API 公式ドキュメントのフラッグシップ。500k トークン文脈）。画像・動画＝Grok Imagine、音声＝Grok Voice",
+      "capabilities": [
+        "X 投稿のリアルタイム検索・参照",
+        "DeepSearch（Web＋X）",
+        "推論モード",
+        "画像・動画生成（Imagine）",
+        "音声会話",
+        "コーディング（Grok Build）",
+        "常駐エージェント（Grok Bot）"
+      ],
+      "strengths": [
+        "速報・話題の把握",
+        "率直な回答傾向",
+        "API が比較的安価で OpenAI 互換 SDK が使える"
+      ],
+      "weaknesses": [
+        "プラン体系が最も混乱（新旧体系が併存）",
+        "X 由来データの学習設定が分かりにくい",
+        "企業向け管理資料が薄いという指摘（二次情報）"
+      ],
+      "pricing": "The X Subscription（2026-10-12 公式発表）: Free $0 / Plus $8/月 / Premium $30/月 / Super $100/月 / Ultra $200/月。旧 SuperGrok 等は既存契約者のみ。API は従量制",
+      "platforms": [
+        "Web（grok.com）",
+        "iOS",
+        "Android",
+        "X 内",
+        "API"
+      ],
+      "cautions": "学習設定がアプリ側と X 側の2系統あり、X 側は別途オプトアウトが必要。オプトアウトは将来分のみ。料金・プラン名の変更頻度が非常に高い",
+      "sources": [
+        "https://x.ai/news/x-subscription",
+        "https://docs.x.ai/developers/models",
+        "https://docs.x.ai/developers/pricing"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 4,
+        "coding": 3,
+        "creative": 4,
+        "research": 5,
+        "action": 3,
+        "value": 3
+      }
+    },
+    {
+      "id": "runway",
+      "name": "Runway",
+      "provider": "Runway",
+      "category": "動画生成",
+      "character": "映画部の部長",
+      "summary": "制作ワークフロー全体をカバーする映像制作者向けAI動画スイート",
+      "main_models": "Gen-4.5（旗艦）、Gen-4 / Gen-4 Turbo、Aleph（編集）、Act-Two（演技転送）",
+      "capabilities": [
+        "テキスト／画像→動画",
+        "参照によるキャラ・画風の一貫性",
+        "動画編集",
+        "リップシンク",
+        "他社モデル（Veo、Kling等）の呼び出し"
+      ],
+      "strengths": [
+        "映像制作者向けの完成度",
+        "ワークフローの網羅性"
+      ],
+      "weaknesses": [
+        "クレジット消費が速く実質コストが読みにくい",
+        "アプリ用とAPI用でクレジット残高が別",
+        "無料枠は透かし入り"
+      ],
+      "pricing": "Free 125クレジット（一回限り）/ Standard $15/月（年払い $12）625クレジット / Pro $35/月（同 $28）2,250 / Max $95/月（同 $76）9,500。API は 1クレジット=$0.01",
+      "platforms": [
+        "Web",
+        "モバイルアプリ",
+        "API"
+      ],
+      "cautions": "Enterprise 以外のプランでは入力・出力を Runway が学習・改善に利用できる条項があるとされる（要公式再確認）。機密素材の投入に注意",
+      "sources": [
+        "https://docs.dev.runwayml.com/guides/pricing/"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 2,
+        "coding": 1,
+        "creative": 5,
+        "research": 1,
+        "action": 3,
+        "value": 3
+      }
+    },
+    {
+      "id": "kling",
+      "name": "Kling",
+      "provider": "快手（Kuaishou）",
+      "category": "動画生成",
+      "character": "勢いのある新進映像クリエイター",
+      "summary": "長めのクリップと制御性、価格対性能に強みを持つ動画生成AI",
+      "main_models": "Kling 3.0 系／4.0 系（4.0 は 2026-10 正式公開との情報）",
+      "capabilities": [
+        "テキスト／画像→動画",
+        "モーションコントロール",
+        "ネイティブ音声",
+        "4K 対応",
+        "キーフレーム・複数参照素材による制御"
+      ],
+      "strengths": [
+        "価格対性能",
+        "長尺クリップ",
+        "制御の細かさ"
+      ],
+      "weaknesses": [
+        "料金表示が定価／初月割引／更新価格の三重で分かりにくい",
+        "無料枠は非商用・透かし付き"
+      ],
+      "pricing": "Basic 無料 / Standard 定価 $10/月（更新 $8.80）660クレジット / Pro 定価 $37（更新 $32.56）3,000 / Premier 定価 $92（更新 $80.96）8,000 / Ultra 定価 $180（更新 $159.99）26,000（二次資料）",
+      "platforms": [
+        "Web（kling.ai）",
+        "iOS",
+        "Android",
+        "API"
+      ],
+      "cautions": "商用利用は有料プラン側。中国企業提供のためデータ取扱いポリシーの確認が推奨される",
+      "sources": [
+        "https://faceloom.com/blog/kling-ai-pricing-explained"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 2,
+        "coding": 1,
+        "creative": 5,
+        "research": 1,
+        "action": 3,
+        "value": 4
+      }
+    },
+    {
+      "id": "sora",
+      "name": "Sora（提供終了）",
+      "provider": "OpenAI",
+      "category": "動画生成",
+      "character": "未設定（歴史的参照）",
+      "summary": "動画生成の水準を押し上げたが、2026年に提供終了した歴史的参照ツール",
+      "main_models": "Sora 2 / Sora 2 Pro",
+      "capabilities": [
+        "（終了前）テキスト／画像からの動画生成",
+        "同期したセリフ・効果音",
+        "複数ショットの一貫性"
+      ],
+      "strengths": [
+        "（当時）物理的 plausibility と一貫性が最高水準だった"
+      ],
+      "weaknesses": [
+        "提供終了そのもの"
+      ],
+      "pricing": "終了前の API 価格: Sora 2 $0.10/秒（720p）、Sora 2 Pro $0.30〜$0.70/秒。コンシューマ向けは ChatGPT Plus／Pro に同梱だった",
+      "platforms": [
+        "（終了）Web",
+        "モバイルアプリ",
+        "Videos API"
+      ],
+      "cautions": "Web・アプリ体験は 2026-04-26 終了、モデルと Videos API は 2026-09-24 終了し後継APIなし（公式）。同名の第三者サイトは公式ではない",
+      "sources": [
+        "https://developers.openai.com/api/docs/models/sora-2",
+        "https://openai.com/index/sora/"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 2,
+        "coding": 1,
+        "creative": 5,
+        "research": 1,
+        "action": 2,
+        "value": 1
+      }
+    },
+    {
+      "id": "midjourney",
+      "name": "Midjourney",
+      "provider": "Midjourney, Inc.",
+      "category": "画像生成",
+      "character": "美術部のエース",
+      "summary": "芸術性・画風の完成度で定番の画像生成AI。短い動画生成も追加",
+      "main_models": "V8 系（版表記は要公式再確認）",
+      "capabilities": [
+        "画像生成",
+        "キャラクター／スタイル参照",
+        "画像編集",
+        "短い動画生成"
+      ],
+      "strengths": [
+        "芸術性・画風の完成度",
+        "ブランディング・広告ビジュアルでの実績"
+      ],
+      "weaknesses": [
+        "無料プラン・無料トライアルなし",
+        "公式APIがなく業務組み込み不可",
+        "下位プランは生成物が公開ギャラリーに出る"
+      ],
+      "pricing": "Basic $10/月 / Standard $30/月 / Pro $60/月 / Mega $120/月（年払いで約20%引）",
+      "platforms": [
+        "Web",
+        "Discord"
+      ],
+      "cautions": "有料プランで所有・商用利用可だが、年商 $100万超の企業は Pro／Mega 加入が所有の条件。プロンプトと生成物に広範なライセンス許諾条項あり",
+      "sources": [
+        "https://www.genie-artificiel.com/en/ai-tools/midjourney/"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 2,
+        "coding": 1,
+        "creative": 5,
+        "research": 1,
+        "action": 1,
+        "value": 3
+      }
+    },
+    {
+      "id": "gpt-image",
+      "name": "ChatGPT 画像生成／GPT Image",
+      "provider": "OpenAI",
+      "category": "画像生成",
+      "character": "未設定（ChatGPT の一機能として扱う）",
+      "summary": "ChatGPT の会話の中で生成・編集できる画像生成機能",
+      "main_models": "GPT Image 系（現行版名は表記が揺れており要再確認）",
+      "capabilities": [
+        "画像生成",
+        "部分編集",
+        "画像内テキスト描画",
+        "ChatGPT 本体との連携"
+      ],
+      "strengths": [
+        "会話で指示しながらの生成・編集の手軽さ",
+        "指示追従と文字描画の強さ"
+      ],
+      "weaknesses": [
+        "画像生成回数の上限が数値非公開で混雑時に変動",
+        "純粋な画風の個性では専用型に譲る場面がある"
+      ],
+      "pricing": "ChatGPT Free は制限付き利用可 / Go $8/月 / Plus $20/月 / Pro $100/月〜 に含まれる。API はトークン課金",
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android",
+        "API"
+      ],
+      "cautions": "生成物には C2PA 等の来歴情報。出力の権利はユーザー帰属・商用可とされるが、純粋な AI 生成物は著作権保護を受けない可能性があり、他者権利侵害の責任はユーザー側",
+      "sources": [
+        "https://www.toolcolumn.com/learn/is-chatgpt-images-free"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 3,
+        "coding": 1,
+        "creative": 4,
+        "research": 1,
+        "action": 3,
+        "value": 4
+      }
+    },
+    {
+      "id": "flux",
+      "name": "FLUX",
+      "provider": "Black Forest Labs",
+      "category": "画像生成",
+      "character": "自前工房を持つ写真家エンジニア",
+      "summary": "API とオープンウェイトで使う開発者寄りの画像生成モデル群",
+      "main_models": "FLUX.1／FLUX.2 ファミリー（pro／flex／max、編集特化 Kontext 系）。一部は重み公開",
+      "capabilities": [
+        "画像生成",
+        "画像編集（Kontext）",
+        "文字描画",
+        "自前ホスティング（重み公開版）"
+      ],
+      "strengths": [
+        "写真らしさとプロンプト追従",
+        "API 単価の安さ",
+        "オープンウェイト版は自前GPU運用できプライバシー面で有利"
+      ],
+      "weaknesses": [
+        "コンシューマ向け定額プランや専用アプリがなく開発者寄り",
+        "バリアントごとにライセンスが異なる"
+      ],
+      "pricing": "公式APIは従量制（サブスクなし）。目安 FLUX 1.1 [pro] $0.04/枚、Kontext [pro] $0.04/枚 程度（変動あり、要再確認）。API無料枠は基本なし",
+      "platforms": [
+        "API",
+        "Playground",
+        "ComfyUI／Hugging Face 連携",
+        "自前ホスティング"
+      ],
+      "cautions": "重み公開版はバリアントごとのライセンス確認が必須（高速版は Apache 2.0、高性能版は非商用で商用は別途有償、という FLUX.1 世代の整理）",
+      "sources": [
+        "https://invideo.io/blog/flux-ai-image-generator/"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 2,
+        "coding": 2,
+        "creative": 5,
+        "research": 1,
+        "action": 4,
+        "value": 4
+      }
+    },
+    {
+      "id": "suno",
+      "name": "Suno",
+      "provider": "Suno, Inc.",
+      "category": "音楽生成",
+      "character": "軽音部の人気者",
+      "summary": "歌詞とスタイル指定からボーカル入り楽曲を丸ごと生成する音楽AI",
+      "main_models": "v5.5〜v6 世代（表記差あり、要再確認）。上位にブラウザ DAW「Suno Studio」",
+      "capabilities": [
+        "作詞・作曲・歌唱までの一貫生成",
+        "ステム分離",
+        "自分の声の利用",
+        "カスタムモデル"
+      ],
+      "strengths": [
+        "一貫生成の完成度",
+        "商用利用可能な代表格であること"
+      ],
+      "weaknesses": [
+        "権利条件が 2026 年に複数回変更され追従が難しい",
+        "ダウンロード数に上限が導入されたとの情報"
+      ],
+      "pricing": "Free $0（50クレジット/日、商用不可・ダウンロード不可）/ Pro $10/月（年払い $8）2,500クレジット / Premier $30/月（年払い $24）10,000クレジット＋Studio",
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android"
+      ],
+      "cautions": "有料プラン加入中に生成し正規にダウンロードした曲は商用利用可とされるが、無料プランの曲は遡って商用化できない。実在アーティスト名の指定は制限対象",
+      "sources": [
+        "https://www.theaitools.tech/2026/10/is-suno-free-for-commercial-use.html"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 2,
+        "coding": 1,
+        "creative": 5,
+        "research": 1,
+        "action": 2,
+        "value": 4
+      }
+    },
+    {
+      "id": "udio",
+      "name": "Udio",
+      "provider": "Uncharted Labs",
+      "category": "音楽生成",
+      "character": "楽曲は一級品なのに表に出られない音楽家",
+      "summary": "楽曲の質と編集機能に定評があったが、現在はダウンロード不可・非商用のみに転じた音楽生成AI",
+      "main_models": "v1.5 / v1.5 Allegro 系（モデル更新の停滞が指摘される）",
+      "capabilities": [
+        "ボーカル入り楽曲生成",
+        "Extend／Remix／Inpaint 等の編集",
+        "スタイル参照",
+        "ボイスコントロール"
+      ],
+      "strengths": [
+        "楽曲の質",
+        "編集の細やかさ"
+      ],
+      "weaknesses": [
+        "全プランでダウンロード無効化。出力は個人・非商用のみで外部投稿も禁止"
+      ],
+      "pricing": "Free $0（10クレジット/日・月100まで）/ Standard $10/月（年払い $8）2,400クレジット / Pro $30/月（年払い $24）6,000クレジット",
+      "platforms": [
+        "Web",
+        "iOS"
+      ],
+      "cautions": "料金を払っても商用利用・持ち出しはできない。比較表で明確に区別すべき事例",
+      "sources": [
+        "https://lumimusic.ai/blog/udio-pricing"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 2,
+        "coding": 1,
+        "creative": 4,
+        "research": 1,
+        "action": 1,
+        "value": 2
+      }
+    },
+    {
+      "id": "canva-ai",
+      "name": "Canva AI（旧 Magic Studio）",
+      "provider": "Canva",
+      "category": "ビジュアル編集補助",
+      "character": "文化祭実行委員の器用なまとめ役",
+      "summary": "デザインツールに AI 機能群を統合した、非デザイナー向け制作基盤",
+      "main_models": "自社機能＋第三者モデルの統合（モデル構成は非公開）",
+      "capabilities": [
+        "レイアウト自動生成（Magic Design）",
+        "画像編集・消去（Magic Edit／Eraser）",
+        "背景除去",
+        "画像・動画生成（Magic Media）",
+        "文章生成（Magic Write）"
+      ],
+      "strengths": [
+        "テンプレート＋AI 補助で一貫制作できる手軽さ",
+        "チーム共有・ブランドキットとの相性"
+      ],
+      "weaknesses": [
+        "AI 利用は共通の月次枠から消費され残量管理が分かりにくい",
+        "高度な編集精度はプロ向け専用ツールに劣る"
+      ],
+      "pricing": "Free $0 / Pro 年 $144（1人）/ Business 年 $250/人 / Enterprise 個別見積（地域で表示差あり）",
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android",
+        "デスクトップアプリ"
+      ],
+      "cautions": "素材を含むデザインは要素ごとのライセンス制限が残る場合がある。商標登録したいロゴ等は別途条件確認が必要（公式条項の全文照合は未了）",
+      "sources": [
+        "https://www.eesel.ai/blog/canva-ai-pricing"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 3,
+        "coding": 1,
+        "creative": 4,
+        "research": 2,
+        "action": 4,
+        "value": 4
+      }
+    },
+    {
+      "id": "firefly",
+      "name": "Adobe Firefly",
+      "provider": "Adobe",
+      "category": "ビジュアル編集補助",
+      "character": "プロ制作会社の職人",
+      "summary": "Creative Cloud の制作フローに組み込まれた、商用安全性を掲げる生成AI",
+      "main_models": "自社 Firefly モデル（画像・動画・ベクター・音声）＋パートナーモデル（Google／OpenAI／FLUX／Runway／Kling 等）",
+      "capabilities": [
+        "生成塗りつぶし",
+        "生成拡張",
+        "テキスト→ベクター",
+        "画像・動画・音声生成",
+        "パートナーモデルの同一画面利用"
+      ],
+      "strengths": [
+        "既存ワークフロー内での編集補助",
+        "ライセンス済み学習データの方針",
+        "Creative Cloud 連携",
+        "対象企業プランでの IP 補償"
+      ],
+      "weaknesses": [
+        "クレジット制度が複雑（繰り越しなし）",
+        "最高品質の単体生成では専門特化型に譲る場面がある"
+      ],
+      "pricing": "Free は日次制限付き / Firefly Standard $9.99/月（2,000クレジット）/ Pro $19.99（4,000）/ Pro Plus $49.99（10,000）/ Premium $199.99（50,000）。Creative Cloud 各プランにも含まれる",
+      "platforms": [
+        "Web",
+        "デスクトップ（CCアプリ）",
+        "モバイル",
+        "API（Firefly Services）"
+      ],
+      "cautions": "「商用に安全」の主張は自社モデルに限られ、パートナーモデルの出力には各社の条件が及ぶ。ベータ機能・試用は補償対象外の場合がある。生成物には Content Credentials が付与される",
+      "sources": [
+        "https://www.aiketra.com/tools/adobe-firefly.html"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 3,
+        "coding": 1,
+        "creative": 5,
+        "research": 1,
+        "action": 4,
+        "value": 3
+      }
+    },
+    {
+      "id": "muse",
+      "name": "Muse",
+      "provider": "Meta",
+      "category": "パーソナルエージェント",
+      "character": "専属の執事エージェント",
+      "summary": "専用コンピューターを持ち、覚えて・考えて・実行する個人専属エージェント",
+      "main_models": "Muse Spark / Muse Wonder（有料プランでは両モデルが使われる）",
+      "capabilities": [
+        "目標ベースの計画立案と自律実行",
+        "ブラウザ操作・フォーム入力・交渉代行",
+        "メール・カレンダー等のコネクタ連携",
+        "長時間タスクの継続実行",
+        "記憶に基づく能動的提案",
+        "プログラム作成（専用VM上）",
+        "画像・動画生成の手配",
+        "Stripe Link による購入"
+      ],
+      "strengths": [
+        "ユーザーごとの専用VMで記憶・実行が一体",
+        "機微な操作は必ず承認を求める設計",
+        "操作の監査証跡が見られる"
+      ],
+      "weaknesses": [
+        "個人データや複数アカウントへのアクセスを預ける前提で、信頼と権限管理がハードル",
+        "無料プランは週単位の利用上限"
+      ],
+      "pricing": "無料プランあり / Power ¥2,799/月 / Maximum ¥13,990/月（日本価格）",
+      "platforms": [
+        "Web（muse.ai）",
+        "iOS",
+        "Android",
+        "Mac",
+        "WhatsApp 内チャット"
+      ],
+      "cautions": "接続は1サービスずつ段階的に行う前提。承認フローがあるとはいえ送信・購入の最終確認を怠らないこと。権限の棚卸しが必要",
+      "sources": [
+        "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 4,
+        "coding": 4,
+        "creative": 4,
+        "research": 3,
+        "action": 5,
+        "value": 4
+      }
+    },
+    {
+      "id": "manus",
+      "name": "Manus",
+      "provider": "Butterfly Effect Pte. Ltd.（本社シンガポール）",
+      "category": "汎用エージェント",
+      "character": "分身を使いこなす仕事師",
+      "summary": "タスクを丸投げすると完成品を納品する自律型エージェント",
+      "main_models": "Manus 2.0 系（基盤は複数プロバイダーのモデルを統合するマルチモデル実行）",
+      "capabilities": [
+        "ブラウザ操作・コード実行・ファイル処理",
+        "レポート／スライド／表計算／Webサイト等の完成品納品",
+        "Wide Research（並列リサーチ）",
+        "フルスタックWebアプリ構築",
+        "スケジュール自動化",
+        "ローカルファイル操作",
+        "Browser Operator"
+      ],
+      "strengths": [
+        "自律性と成果物志向",
+        "MCPコネクタが豊富で業務アプリと組み合わせやすい"
+      ],
+      "weaknesses": [
+        "クレジット消費がタスクの複雑さ依存で読みにくい",
+        "Free は同時実行1タスク等の制限が強い（二次情報）"
+      ],
+      "pricing": "Free $0（毎日300クレジット付与）/ Pro $20/月〜 と $40/月〜 の2段（年払い17%割引、7日間無料トライアル）/ Team $20/シート/月〜（公式ヘルプ）",
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android",
+        "macOS／Windows デスクトップアプリ",
+        "Chrome拡張"
+      ],
+      "cautions": "依頼は具体的に書くほどクレジット効率が良い（公式推奨）。簡易な質問は Chat Mode を使うこと。企業帰属（Meta買収の解消）については要再確認",
+      "sources": [
+        "https://help.manus.im/en/articles/11711111-what-is-the-current-membership-pricing-for-manus",
+        "https://manus.im/docs/introduction/plans",
+        "https://manus.im/connectors/gmail"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 4,
+        "coding": 4,
+        "creative": 3,
+        "research": 5,
+        "action": 5,
+        "value": 3
+      }
+    },
+    {
+      "id": "genspark",
+      "name": "Genspark",
+      "provider": "MainFunc, Inc.",
+      "category": "汎用エージェント",
+      "character": "専門家チームを束ねるプロデューサー",
+      "summary": "成果物スイートと Super Agent を1契約にまとめたAIワークスペース",
+      "main_models": "Mixture-of-Agents 方式で30以上のモデルを統括（廠商主張、二次経由）",
+      "capabilities": [
+        "Super Agent（汎用自律エージェント）",
+        "AI Slides／AI Sheets／AI Docs",
+        "AI Chat（モデル切替）",
+        "Deep Research",
+        "Fact Check",
+        "AI議事録",
+        "Genspark Code",
+        "AI Drive",
+        "電話代行 Call For Me"
+      ],
+      "strengths": [
+        "完成品スイートを1つのサブスクで作れる",
+        "有料プランで AI生成コンテンツの商用利用が明示",
+        "複数社のモデルを1契約で使える"
+      ],
+      "weaknesses": [
+        "Pro が高額（$249.99/月）",
+        "課金構造が複雑",
+        "Free の日次クレジットに生涯上限がありクレジットは繰り越されない"
+      ],
+      "pricing": "Free $0（100クレジット/日・生涯上限あり、Drive 1GB）/ Plus $24.99/月（年払い $19.99/月）月10,000クレジット〜・50GB・商用利用可 / Pro $249.99/月（年払い $199.99/月）月125,000クレジット〜・1TB / Team $40/シート/月（公式ヘルプ）",
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android"
+      ],
+      "cautions": "Web課金とアプリストア課金は別管理で解約も購入側で行う必要がある。Cloud Computer 解約時は保存データが完全に消去される",
+      "sources": [
+        "https://www.genspark.ai/ja/helpcenter/membership-plans",
+        "https://www.genspark.ai/business/pricing"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 4,
+        "coding": 3,
+        "creative": 4,
+        "research": 4,
+        "action": 4,
+        "value": 2
+      }
+    },
+    {
+      "id": "felo",
+      "name": "Felo",
+      "provider": "Felo株式会社（東京）",
+      "category": "AI検索",
+      "character": "言語の壁を越える調査員",
+      "summary": "言語の壁を越える多言語検索を核に、資料作成まで一気通貫の日本発AI",
+      "main_models": "自社基盤モデルではなく各社の SOTA モデルを束ねて提供（テキスト＝GPT-6 Astra、Claude Fable、Grok 4.6 等。構成は随時更新）",
+      "capabilities": [
+        "AI検索（無料でも使い放題）",
+        "Pro検索",
+        "Research Agent／ディープリサーチ",
+        "ファイル分析",
+        "AIスライド",
+        "AIデザイナー",
+        "Webページ・ドキュメント生成",
+        "カスタムエージェント",
+        "Xリサーチ",
+        "動画生成"
+      ],
+      "strengths": [
+        "日本企業で円建て・日本語UI",
+        "無料でも AI検索が使い放題で入口が広い",
+        "検索→資料化が一気通貫",
+        "開発者向けAPIが手厚い"
+      ],
+      "weaknesses": [
+        "無料プランは高性能モデルや一部機能に制限",
+        "機能ごとのクレジット単価表が細かく消費予測に慣れが要る"
+      ],
+      "pricing": "スタンダード無料（カード登録不要、AI検索使い放題、ファイル分析1日3件まで）/ Pro 月額 ¥2,099 または年額 ¥20,998（毎月15,000クレジット＋毎日200ボーナス）/ Enterprise 個別見積。API はサブスク不要の従量制（公式）",
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android",
+        "Chrome拡張"
+      ],
+      "cautions": "モデル構成は随時入れ替わる（公式明記）。クレジットは繰り越し不可（条件あり）。公式ページ間で Pro の検索上限の表記ゆれがあり掲載前に要統一確認",
+      "sources": [
+        "https://felo.ai/ja/pricing",
+        "https://felo.ai/ja/blog/about-us/",
+        "https://openapi.felo.ai/ja/about"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 4,
+        "coding": 2,
+        "creative": 3,
+        "research": 5,
+        "action": 3,
+        "value": 5
+      }
+    },
+    {
+      "id": "kiro",
+      "name": "Kiro",
+      "provider": "AWS（Amazon Web Services）",
+      "category": "開発特化",
+      "character": "段取り完璧な開発ディレクター",
+      "summary": "仕様（スペック）を文書化してから実装する、スペック駆動開発のエージェントIDE",
+      "main_models": "デフォルトは Auto（モデルを混合しルーティング）。選択可能な例: GPT-5.6 系、Claude Opus 5／Sonnet 5 系、Haiku 4.5、DeepSeek 3.2、Qwen3 Coder Next 等（公式モデルページ）",
+      "capabilities": [
+        "スペック駆動開発（要件定義→設計→実装タスクの文書化）",
+        "プロパティベーステストによる仕様整合の検証",
+        "Steeringファイル（プロジェクト規約の常駐指定）",
+        "Agent Hooks（イベント駆動自動化）",
+        "MCP対応",
+        "Powers（連携パッケージ）",
+        "並列エージェント実行"
+      ],
+      "strengths": [
+        "仕様が文書として残り大規模・チーム開発で意図のズレを抑えやすい",
+        "モデル選択肢が広い",
+        "VS Code 設定や互換プラグインを移行できる"
+      ],
+      "weaknesses": [
+        "開発専用で汎用タスクには使えない",
+        "クレジット消費がモデル倍率とコンテキスト量に左右され予測しにくい",
+        "Kiro Web は有料のみ・実行リージョンが US East のみ"
+      ],
+      "pricing": "Free $0（50クレジット/月）/ Pro $20/人/月（1,000クレジット）/ Pro+ $40（2,000）/ Pro Max $100（5,000）/ Power $200（10,000）。追加クレジット $0.04/個。プラン内クレジットは繰り越しなし（公式）",
+      "platforms": [
+        "IDE（macOS／Windows／Linux）",
+        "CLI",
+        "Web（有料のみ）",
+        "モバイルアプリ",
+        "ACP互換IDE",
+        "CI/CD自動化"
+      ],
+      "cautions": "データ利用ポリシーがログイン形態で変わる（Free／ソーシャルログイン等では改善利用の可能性がありオプトアウト可、IAM Identity Center 等経由の有料では使われない）。UIは英語のみという二次情報もあり日本語運用は要検証",
+      "sources": [
+        "https://kiro.dev/pricing/",
+        "https://kiro.dev/faq/",
+        "https://kiro.dev/docs/models/"
+      ],
+      "checked_date": "2026-11-05",
+      "scores": {
+        "reasoning": 3,
+        "coding": 5,
+        "creative": 1,
+        "research": 2,
+        "action": 4,
+        "value": 3
+      }
+    }
+  ]
+}
