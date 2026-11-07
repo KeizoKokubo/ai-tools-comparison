@@ -83,6 +83,25 @@ section{padding:34px 0}
 .official-link .host{font-weight:700;font-size:12px;opacity:.85}
 .official-link svg{flex:0 0 auto}
 .official-link-lg{font-size:14px;padding:7px 14px;margin-top:10px}
+/* fitness sort */
+.sortbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:2px 0 14px}
+.seg{display:inline-flex;border:2px solid var(--line);border-radius:999px;overflow:hidden;background:var(--card)}
+.seg button{border:none;background:transparent;color:var(--ink);font-family:inherit;font-weight:900;font-size:13.5px;padding:8px 16px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.fit-open{border:2px solid var(--accent);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 18px;font-weight:900;font-size:13.5px;cursor:pointer;font-family:inherit}
+.fit-open:hover{border-color:var(--ink)}
+.fit-hint{font-size:13px;color:var(--muted)}
+.fitbadge{display:inline-block;background:var(--gold);color:#231a00;font-weight:900;font-size:13px;padding:3px 12px;border-radius:999px;border:1.5px solid rgba(35,26,0,.65)}
+#fitDialog{max-width:520px}
+.fitdlg-in{padding:22px;max-height:86vh;overflow:auto}
+.fitdlg-in h3{font-size:21px;margin:0 0 6px}
+.slider-row{display:grid;grid-template-columns:104px 1fr 30px;gap:12px;align-items:center;padding:8px 0;border-bottom:1.5px dashed var(--line)}
+.slider-row label{font-weight:900;font-size:14.5px}
+.slider-row output{font-weight:900;font-size:17px;text-align:right;color:var(--official);font-variant-numeric:tabular-nums}
+.slider-row input[type="range"]{width:100%;height:34px;accent-color:var(--accent);cursor:pointer;margin:0}
+.fit-preview{font-weight:900;font-size:14px;margin:12px 0 4px;background:var(--bg2);border-radius:10px;padding:9px 12px}
+.fit-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.fit-actions .btn{flex:1 1 auto}
 /* modal */
 dialog{border:none;border-radius:22px;padding:0;max-width:860px;width:calc(100% - 24px);background:var(--card);color:var(--ink);box-shadow:var(--shadow)}
 dialog::backdrop{background:rgba(20,15,30,.55);backdrop-filter:blur(3px)}
@@ -162,6 +181,14 @@ footer h2{color:var(--ink)}
   <section id="chars">
     <div class="sec-head"><h2>キャラクター図鑑</h2><p>キャッチフレーズは「〇〇な△△、ツール名」。カードをタップで詳細＆レーダーチャート。</p></div>
     <div class="tabs" role="tablist" id="tabs"></div>
+    <div class="sortbar">
+      <div class="seg" role="group" aria-label="並び順の切り替え">
+        <button type="button" id="sortReg" aria-pressed="true">登録順</button>
+        <button type="button" id="sortFit" aria-pressed="false">適応度順</button>
+      </div>
+      <button type="button" class="fit-open" id="fitOpen">⚖️ 自分仕様で並び替え</button>
+      <span class="fit-hint">重視したい能力をスライダーで決めると、あなたへの適応度が高い順に並び替えます。</span>
+    </div>
     <p class="also-note"><span class="alsobadge-mini">兼用</span> バッジのカードは、本業は別ジャンルのツールです。そのジャンルでもちょっとした用途なら使えるため、各カテゴリタブでは本業勢の後ろに並べて表示しています（「すべて」タブでは通常どおり1回だけ表示）。</p>
     <div class="grid" id="grid"></div>
     <p id="count" style="color:var(--muted);font-size:13.5px"></p>
@@ -192,6 +219,21 @@ footer h2{color:var(--ink)}
   <p>・ キャラクター設定は各ツールの実際の特徴・機能にもとづいており、根拠はプロジェクトのキャラ設定シート（v1）に記録しています。キャライラストは本ページ用に生成したオリジナルイラストです。</p>
   <p>・ 更新について： AIツールの情報は短期間で変わるため、週次の更新チェックを設定済みです。古い情報に気づいたら、公式ページで再確認のうえデータを更新します。</p>
 </footer>
+
+<dialog id="fitDialog" aria-label="自分仕様で並び替え">
+  <div class="fitdlg-in">
+    <button class="close-x" type="button" id="fitCloseX" aria-label="閉じる">✕</button>
+    <h3 class="maru">⚖️ 自分仕様で並び替え</h3>
+    <p style="font-size:14px;color:var(--muted);margin:0">重視したい能力ほどスライダーを右へ（0〜10）、いらない能力は0へ。選んでいるカテゴリの中で、適応度が高い順に並び替えます。スライダーを動かすと、その場で「適応度順」に切り替わります。</p>
+    <div id="sliderRows"></div>
+    <div class="fit-preview" id="fitPreview" role="status"></div>
+    <p style="font-size:13px;color:var(--muted);margin:10px 0 0">※ 適応度は編集部評価（6軸・各1〜5）にもとづく目安です。適応度 ＝ Σ（スコア×重み）÷ Σ（重み）を100点換算したもの。全てのスライダーが0のときは、均等な重み（単純平均）で計算します。</p>
+    <div class="fit-actions">
+      <button class="btn btn-main" type="button" id="fitDone">この順序で見る</button>
+      <button class="btn btn-sub" type="button" id="fitReset">リセット（全て5）</button>
+    </div>
+  </div>
+</dialog>
 
 <dialog id="modal" aria-label="ツール詳細"><div class="modal-in" id="modalIn"></div></dialog>
 
@@ -311,6 +353,15 @@ function officialLinkHTML(t,cls){if(!t.url)return "";return '<a class="official-
 
 /* Tabs + cards */
 var curCat="all";
+/* Fitness sort state (in-memory only; resets on reload) */
+var weights=[5,5,5,5,5,5];
+var sortMode="reg";
+function fitness(t){
+  var sw=0, acc=0, i;
+  for(i=0;i<6;i++){ sw+=weights[i]; acc+=t.scores[i]*weights[i]; }
+  if(sw===0){ var s=0; for(i=0;i<6;i++)s+=t.scores[i]; return Math.round(s/6/5*100); }
+  return Math.round(acc/sw/5*100);
+}
 var tabsEl=document.getElementById("tabs"), gridEl=document.getElementById("grid");
 CATS.forEach(function(c){
   var b=document.createElement("button"); b.className="tab"; b.textContent=c[1]; b.setAttribute("role","tab");
@@ -324,6 +375,10 @@ function renderCards(){
   var ordered=[];
   TOOLS.forEach(function(t){ if(curCat==="all"||t.cat===curCat)ordered.push({t:t,also:false}); });
   if(curCat!=="all")TOOLS.forEach(function(t){ if(t.cat!==curCat&&isAlsoIn(t,curCat))ordered.push({t:t,also:true}); });
+  if(sortMode==="fit"){
+    ordered.forEach(function(item,idx){ item._idx=idx; item._fit=fitness(item.t); });
+    ordered.sort(function(a,b){ return (b._fit-a._fit)||(a._idx-b._idx); });
+  }
   ordered.forEach(function(item){
     var t=item.t, viaAlso=item.also, viaCat=viaAlso?curCat:null; n++;
     var d=document.createElement("article"); d.className="card"+(t.ended?" ended":""); applyVars(d,t);
@@ -332,6 +387,7 @@ function renderCards(){
     d.innerHTML='<div class="ph"><img src="'+CHAR_IMGS[t.id]+'" alt="'+esc(t.name)+'のキャラクターイラスト">'+(t.ended?'<span class="endbadge">提供終了</span>':'')+(t.badge?'<span class="warnbadge">'+esc(t.badge)+'</span>':'')+(viaAlso?'<span class="alsobadge">兼用</span>':'')+(t.type?'<span class="typebadge">'+esc(t.type)+'</span>':'')+'<span class="total">総合 '+total(t)+' / 30</span></div>'
       +'<div class="bd"><div class="catch">'+esc(t.character)+'、<span>'+esc(t.name)+'</span></div>'
       +'<div class="meta">'+esc(t.provider)+' ・ '+(viaAlso?'本業：'+CATLABEL[t.cat]:CATLABEL[t.cat])+'</div>'
+      +(sortMode==="fit"?'<div><span class="fitbadge">'+n+'位 ・ 適応度 '+fitness(t)+'</span></div>':'')
       +'<p class="sum">'+esc(t.summary)+'</p><div class="chips">'+chips+'</div>'
       +'<div class="quote">「'+esc(t.quote)+'」</div>'
       +(t.url?'<div class="official-row">'+officialLinkHTML(t,'')+'</div>':'')
@@ -347,6 +403,59 @@ function renderCards(){
   document.getElementById("count").textContent=n+" ツールを表示中（全"+TOOLS.length+"ツール）";
 }
 renderCards();
+
+/* Fitness sort UI */
+var fitDialog=document.getElementById("fitDialog");
+var sliderRows=document.getElementById("sliderRows");
+var sliderInputs=[], sliderOutputs=[];
+function setSortMode(m){
+  sortMode=m;
+  document.getElementById("sortReg").setAttribute("aria-pressed", m==="reg"?"true":"false");
+  document.getElementById("sortFit").setAttribute("aria-pressed", m==="fit"?"true":"false");
+  renderCards();
+}
+function currentList(){
+  var list=[];
+  TOOLS.forEach(function(t,idx){
+    if(curCat==="all"||t.cat===curCat)list.push({t:t,idx:idx});
+    else if(isAlsoIn(t,curCat))list.push({t:t,idx:TOOLS.length+idx});
+  });
+  return list;
+}
+function updateFitPreview(){
+  var list=currentList();
+  list.forEach(function(x){ x.fit=fitness(x.t); });
+  list.sort(function(a,b){ return (b.fit-a.fit)||(a.idx-b.idx); });
+  var catName=curCat==="all"?"すべて":CATLABEL[curCat];
+  var top=list.slice(0,3).map(function(x,i){ return (i+1)+"位 "+x.t.name+"（適応度 "+x.fit+"）"; }).join(" ・ ");
+  document.getElementById("fitPreview").textContent="いまの「"+catName+"」での適応度トップ3： "+top;
+}
+AXES.forEach(function(ax,i){
+  var row=document.createElement("div"); row.className="slider-row";
+  var lab=document.createElement("label"); lab.htmlFor="w"+i; lab.textContent=ax[1];
+  var inp=document.createElement("input"); inp.type="range"; inp.min="0"; inp.max="10"; inp.step="1"; inp.value=String(weights[i]); inp.id="w"+i;
+  var out=document.createElement("output"); out.textContent=String(weights[i]); out.htmlFor="w"+i;
+  inp.addEventListener("input",function(){
+    weights[i]=parseInt(inp.value,10)||0;
+    out.textContent=inp.value;
+    setSortMode("fit");
+    updateFitPreview();
+  });
+  row.appendChild(lab); row.appendChild(inp); row.appendChild(out);
+  sliderRows.appendChild(row);
+  sliderInputs.push(inp); sliderOutputs.push(out);
+});
+document.getElementById("sortReg").addEventListener("click",function(){ setSortMode("reg"); });
+document.getElementById("sortFit").addEventListener("click",function(){ setSortMode("fit"); });
+document.getElementById("fitOpen").addEventListener("click",function(){ updateFitPreview(); fitDialog.showModal(); });
+document.getElementById("fitCloseX").addEventListener("click",function(){ fitDialog.close(); });
+document.getElementById("fitDone").addEventListener("click",function(){ fitDialog.close(); });
+fitDialog.addEventListener("click",function(e){ if(e.target===fitDialog)fitDialog.close(); });
+document.getElementById("fitReset").addEventListener("click",function(){
+  for(var i=0;i<6;i++){ weights[i]=5; sliderInputs[i].value="5"; sliderOutputs[i].textContent="5"; }
+  setSortMode("fit");
+  updateFitPreview();
+});
 
 /* Radar drawing */
 function drawRadar(canvas, series, progress){
