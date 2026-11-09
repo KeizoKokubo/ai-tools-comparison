@@ -1,6 +1,6 @@
 {
   "title": "AIツール比較データ（公開版）",
-  "checked_date": "2026-11-07",
+  "checked_date": "2026-11-09",
   "note": "料金・モデル等は各社公式ページ等の公開情報に基づく（出典は各ツールに記載）。scores は調査に基づく編集部評価（1〜5）であり公式スペックではない。",
   "axes": [
     {
@@ -145,7 +145,7 @@
         "画像生成は公式プラン表に掲載なし",
         "5時間＋週次の利用上限が分かりにくく Claude Code と枠を共有"
       ],
-      "pricing": "Free $0 / Pro $20/月（年払い実質 $17/月）/ Max $100/月 / Ultra $200/月 / Team Standard $20/席（年払い）・Premium $100/席 / Enterprise $20/席＋API実費（公式・USD・税別）",
+      "pricing": "Free $0 / Pro $20/月（年払い実質 $17/月）/ Max $100/月（月 $100 分の API クレジット付き）/ Ultra $200/月（月 $200 分の API クレジット付き）/ Team Standard $20/席（年払い）・Premium $100/席 / Enterprise $20/席＋API実費（公式・USD・税別）",
       "platforms": [
         "Web",
         "iOS",
@@ -160,7 +160,7 @@
         "https://claude.ai/pricing",
         "https://claude.com/ja/pricing"
       ],
-      "checked_date": "2026-11-05",
+      "checked_date": "2026-11-09",
       "scores": {
         "reasoning": 5,
         "writing": 5,
@@ -242,7 +242,7 @@
       "id": "grok",
       "name": "Grok",
       "url": "https://grok.com/",
-      "provider": "xAI",
+      "provider": "SpaceX Super Intelligence（旧 xAI）",
       "category": "汎用チャット",
       "also_in": [
         "画像生成",
@@ -284,7 +284,7 @@
         "https://docs.x.ai/developers/models",
         "https://docs.x.ai/developers/pricing"
       ],
-      "checked_date": "2026-11-05",
+      "checked_date": "2026-11-09",
       "scores": {
         "reasoning": 4,
         "writing": 3,
@@ -362,7 +362,7 @@
       "also_in": [],
       "character": "勢いのある新進映像クリエイター",
       "summary": "長めのクリップと制御性、価格対性能に強みを持つ動画生成AI",
-      "main_models": "Kling 3.0 系／4.0 系（4.0 は 2026-10 正式公開との情報）",
+      "main_models": "Kling 4.0（2026-10-15 正式公開、現行旗艦。30秒生成・ネイティブ音声・Omni 参照対応）／Kling 3.0 系も併用可。4.0 Flash は年額 Ultra+ で早期アクセス",
       "capabilities": [
         "テキスト／画像→動画",
         "画像生成（Kling Image／Kolors 系）",
@@ -380,7 +380,7 @@
         "料金表示が定価／初月割引／更新価格の三重で分かりにくい",
         "無料枠は非商用・透かし付き"
       ],
-      "pricing": "Basic 無料 / Standard 定価 $10/月（更新 $8.80）660クレジット / Pro 定価 $37（更新 $32.56）3,000 / Premier 定価 $92（更新 $80.96）8,000 / Ultra 定価 $180（更新 $159.99）26,000（二次資料）",
+      "pricing": "Basic 無料 / Standard 定価 $10/月（更新 $8.80）660クレジット / Pro 定価 $37（更新 $32.56）3,000 / Premier 8K 定価 $92（更新 $80.96）8,000〜38K 定価 $428（更新 $376.99）38,000（スライダーで 8K／18K／28K／38K を選択）/ Ultra+ 定価 $619（更新 $544.99）57,000。旧 Ultra（$180／26,000）は新規受付終了。初月は 30% オフ（公式会員プランページ）",
       "platforms": [
         "Web（kling.ai）",
         "iOS",
@@ -389,9 +389,10 @@
       ],
       "cautions": "商用利用は有料プラン側。中国企業提供のためデータ取扱いポリシーの確認が推奨される",
       "sources": [
-        "https://faceloom.com/blog/kling-ai-pricing-explained"
+        "https://kling.ai/app/membership/membership-plan",
+        "https://kling.ai/dev/pricing"
       ],
-      "checked_date": "2026-11-05",
+      "checked_date": "2026-11-09",
       "scores": {
         "reasoning": 2,
         "writing": 1,
@@ -464,7 +465,7 @@
       "also_in": [],
       "character": "美術部のエース",
       "summary": "芸術性・画風の完成度で定番の画像生成AI。短い動画生成も追加",
-      "main_models": "V8 系（版表記は要公式再確認）",
+      "main_models": "V8.2（2026-07-24 から現行既定。V8.1／V7／V6.1 も選択可）",
       "capabilities": [
         "画像生成",
         "キャラクター／スタイル参照",
@@ -487,9 +488,10 @@
       ],
       "cautions": "有料プランで所有・商用利用可だが、年商 $100万超の企業は Pro／Mega 加入が所有の条件。プロンプトと生成物に広範なライセンス許諾条項あり",
       "sources": [
+        "https://www.midjourney.com/",
         "https://www.genie-artificiel.com/en/ai-tools/midjourney/"
       ],
-      "checked_date": "2026-11-05",
+      "checked_date": "2026-11-09",
       "scores": {
         "reasoning": 2,
         "writing": 1,
@@ -514,7 +516,7 @@
       "also_in": [],
       "character": "未設定（ChatGPT の一機能として扱う）",
       "summary": "ChatGPT の会話の中で生成・編集できる画像生成機能",
-      "main_models": "GPT Image 系（現行版名は表記が揺れており要再確認）",
+      "main_models": "GPT Image 2 系（OpenAI 公式料金ページに GPT-Image-2 の記載あり。版名の表記はサービスにより揺れがある）",
       "capabilities": [
         "画像生成",
         "部分編集",
@@ -538,9 +540,10 @@
       ],
       "cautions": "生成物には C2PA 等の来歴情報。出力の権利はユーザー帰属・商用可とされるが、純粋な AI 生成物は著作権保護を受けない可能性があり、他者権利侵害の責任はユーザー側",
       "sources": [
+        "https://developers.openai.com/codex/pricing",
         "https://www.toolcolumn.com/learn/is-chatgpt-images-free"
       ],
-      "checked_date": "2026-11-05",
+      "checked_date": "2026-11-09",
       "scores": {
         "reasoning": 3,
         "writing": 1,
@@ -565,7 +568,7 @@
       "also_in": [],
       "character": "自前工房を持つ写真家エンジニア",
       "summary": "API とオープンウェイトで使う開発者寄りの画像生成モデル群",
-      "main_models": "FLUX.1／FLUX.2 ファミリー（pro／flex／max、編集特化 Kontext 系）。一部は重み公開",
+      "main_models": "FLUX 3 世代が現行（FLUX 3 Image／FLUX 3 Image Klein）。FLUX.2 系も併売。編集特化 Kontext 系あり。一部は重み公開",
       "capabilities": [
         "画像生成",
         "画像編集（Kontext）",
@@ -581,18 +584,19 @@
         "コンシューマ向け定額プランや専用アプリがなく開発者寄り",
         "バリアントごとにライセンスが異なる"
       ],
-      "pricing": "公式APIは従量制（サブスクなし）。目安 FLUX 1.1 [pro] $0.04/枚、Kontext [pro] $0.04/枚 程度（変動あり、要再確認）。API無料枠は基本なし",
+      "pricing": "公式APIは従量制（サブスクなし）。FLUX 3 Image $0.048/枚（1K）、FLUX 3 Image Klein $0.009/枚（1K）（公式料金ページの計算例）。Kontext 系も併売。API無料枠は基本なし",
       "platforms": [
         "API",
         "Playground",
         "ComfyUI／Hugging Face 連携",
         "自前ホスティング"
       ],
-      "cautions": "重み公開版はバリアントごとのライセンス確認が必須（高速版は Apache 2.0、高性能版は非商用で商用は別途有償、という FLUX.1 世代の整理）",
+      "cautions": "重み公開版はバリアントごとのライセンス確認が必須。FLUX 3 Image Klein は FLUX Kommunity License（年商 $5M 未満は商用可）。FLUX.1 世代のライセンス整理（高速版 Apache 2.0、高性能版は非商用で商用は別途有償）は旧世代のもの",
       "sources": [
+        "https://bfl.ai/pricing",
         "https://invideo.io/blog/flux-ai-image-generator/"
       ],
-      "checked_date": "2026-11-05",
+      "checked_date": "2026-11-09",
       "scores": {
         "reasoning": 2,
         "writing": 1,
@@ -617,7 +621,7 @@
       "also_in": [],
       "character": "軽音部の人気者",
       "summary": "歌詞とスタイル指定からボーカル入り楽曲を丸ごと生成する音楽AI",
-      "main_models": "v5.5〜v6 世代（表記差あり、要再確認）。上位にブラウザ DAW「Suno Studio」",
+      "main_models": "v5 系（Basic は v4.5、Pro／Premier は v5・v4.5+。公式料金ページ）。上位にブラウザ DAW「Suno Studio」",
       "capabilities": [
         "作詞・作曲・歌唱までの一貫生成",
         "ステム分離",
@@ -630,9 +634,9 @@
       ],
       "weaknesses": [
         "権利条件が 2026 年に複数回変更され追従が難しい",
-        "ダウンロード数に上限が導入されたとの情報"
+        "MP3ダウンロードに上限あり（Basic 0／Pro 20／Premier 60 per month、公式）"
       ],
-      "pricing": "Free $0（50クレジット/日、商用不可・ダウンロード不可）/ Pro $10/月（年払い $8）2,500クレジット / Premier $30/月（年払い $24）10,000クレジット＋Studio",
+      "pricing": "Free $0（50クレジット/日、商用不可・MP3ダウンロード 0/月）/ Pro $10/月（年払い $8）2,500クレジット・MP3ダウンロード 20/月 / Premier $30/月（年払い $24）10,000クレジット・MP3ダウンロード 60/月＋Studio",
       "platforms": [
         "Web",
         "iOS",
@@ -640,9 +644,10 @@
       ],
       "cautions": "有料プラン加入中に生成し正規にダウンロードした曲は商用利用可とされるが、無料プランの曲は遡って商用化できない。実在アーティスト名の指定は制限対象",
       "sources": [
+        "https://suno.com/pricing",
         "https://www.theaitools.tech/2026/10/is-suno-free-for-commercial-use.html"
       ],
-      "checked_date": "2026-11-05",
+      "checked_date": "2026-11-09",
       "scores": {
         "reasoning": 2,
         "writing": 2,
@@ -740,9 +745,10 @@
       ],
       "cautions": "素材を含むデザインは要素ごとのライセンス制限が残る場合がある。商標登録したいロゴ等は別途条件確認が必要（公式条項の全文照合は未了）",
       "sources": [
+        "https://www.canva.com/pricing/",
         "https://www.eesel.ai/blog/canva-ai-pricing"
       ],
-      "checked_date": "2026-11-05",
+      "checked_date": "2026-11-09",
       "scores": {
         "reasoning": 3,
         "writing": 3,
@@ -769,7 +775,7 @@
       ],
       "character": "プロ制作会社の職人",
       "summary": "Creative Cloud の制作フローに組み込まれた、商用安全性を掲げる生成AI",
-      "main_models": "自社 Firefly モデル（画像・動画・ベクター・音声）＋パートナーモデル（Google／OpenAI／FLUX／Runway／Kling 等）",
+      "main_models": "自社 Firefly モデル（画像は Firefly Image 5 が現行、動画・ベクター・音声）＋パートナーモデル（Google／OpenAI／FLUX／Runway／Kling 等）",
       "capabilities": [
         "生成塗りつぶし",
         "生成拡張",
@@ -798,7 +804,7 @@
       "sources": [
         "https://www.aiketra.com/tools/adobe-firefly.html"
       ],
-      "checked_date": "2026-11-05",
+      "checked_date": "2026-11-09",
       "scores": {
         "reasoning": 3,
         "writing": 1,
@@ -1085,7 +1091,7 @@
         "クレジット消費がモデル倍率とコンテキスト量に左右され予測しにくい",
         "Kiro Web は有料のみ・実行リージョンが US East のみ"
       ],
-      "pricing": "Free $0（50クレジット/月）/ Pro $20/人/月（1,000クレジット）/ Pro+ $40（2,000）/ Pro Max $100（5,000）/ Power $200（10,000）。追加クレジット $0.04/個。プラン内クレジットは繰り越しなし（公式）",
+      "pricing": "Free $0（50クレジット/月）/ Pro $20/人/月（1,000クレジット）/ Pro+ $40（2,000）/ Pro Max $100（5,000）/ Power $200（10,000）。追加クレジット $0.04/個。プラン内クレジットは繰り越しなし（公式）。Teams 向けクレジットプール制あり（$20/席/月、500クレジット/席、2席以上）。初回アップグレード特典あり（初月無料＋500トライアルクレジット）",
       "platforms": [
         "IDE（macOS／Windows／Linux）",
         "CLI",
@@ -1100,7 +1106,7 @@
         "https://kiro.dev/faq/",
         "https://kiro.dev/docs/models/"
       ],
-      "checked_date": "2026-11-05",
+      "checked_date": "2026-11-09",
       "scores": {
         "reasoning": 3,
         "writing": 2,
@@ -1425,21 +1431,22 @@
       ],
       "weaknesses": [
         "最大30秒と短く長い環境音はループ前提",
-        "クレジット消費の単価表記が公式内でも一貫していない",
+        "API ドキュメント側の単価表記と料金ページの換算が一致しない場合がある",
         "SFX v3 は限定提供で使えない場合がある",
         "制御はテキストのみ"
       ],
-      "pricing": "効果音単体プランはなく ElevenLabs 全体のサブスクの月間クレジットを共有（二次情報）: Free $0（10,000クレジット）/ Starter $6 / Creator $22 / Pro $99 / Scale $299 / Business $990。効果音の消費は公式料金ページで「約200クレジット/生成」、API は $0.12/分とされるが、ドキュメント側の単価表記と換算が一致しない点に注意",
+      "pricing": "効果音単体プランはなく ElevenLabs 全体のサブスクの月間クレジットを共有（公式）: Free $0（10,000クレジット）/ Starter $6（30,000）/ Creator $22（121,000）/ Pro $99（600,000）/ Scale $299（1,800,000）/ Business $990（6,000,000）。効果音は公式料金ページ FAQ で 200クレジット/生成と明記（比較表の月間生成回数とも整合）。API は $0.12/分とされるが、ドキュメント側の単価表記と換算が一致しない点に注意",
       "platforms": [
         "Web（ElevenCreative アプリ）",
         "API（REST）"
       ],
-      "cautions": "商用利用は有料プランのみ。Free は個人・非商用のみで帰属表示が必要とされる（二次情報）。クレジットは音声合成・音楽等と共有プールのため他機能の利用で目減りする。単価表記の揺れがあるため大量生成前に小規模に実測すること。本項目は調査環境から公式サイトへ直接アクセスできず公式引用の二次資料に基づくため、利用前に公式再確認を推奨",
+      "cautions": "商用利用は有料プランのみ。Free は個人・非商用のみで帰属表示が必要とされる（二次情報）。クレジットは音声合成・音楽等と共有プールのため他機能の利用で目減りする。料金・単価は公式料金ページで直接確認済み（2026-11-09）",
       "sources": [
+        "https://elevenlabs.io/pricing",
         "https://www.stork.ai/blog/elevenlabs-sound-effects-2026",
         "https://getcartsignal.com/tools/elevenlabs"
       ],
-      "checked_date": "2026-11-05",
+      "checked_date": "2026-11-09",
       "scores": {
         "reasoning": 3,
         "writing": 1,
