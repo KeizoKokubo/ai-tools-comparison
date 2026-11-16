@@ -1,6 +1,6 @@
 {
   "title": "AIツール比較データ（公開版）",
-  "checked_date": "2026-11-09",
+  "checked_date": "2026-11-16",
   "note": "料金・モデル等は各社公式ページ等の公開情報に基づく（出典は各ツールに記載）。scores は調査に基づく編集部評価（1〜5）であり公式スペックではない。",
   "axes": [
     {
@@ -188,7 +188,7 @@
       ],
       "character": "学校中と顔が利く情報委員",
       "summary": "Google サービス群と一体化した、ネイティブ・マルチモーダルの汎用AI",
-      "main_models": "Gemini 4 Argon（最上位、公式 Google One ページ表記）、3.1 Pro、Flash 系。画像＝Nano Banana 2、動画＝Veo 系、音楽＝Lyria 3.5",
+      "main_models": "Gemini 4 Carbon（最上位、2026-11-10 GA、Ultra専用）、Gemini 4 Argon（Pro以上）、Gemini 4 Hydrogen（2026-11-12 GA、全ティア・高速軽量）、3.1 Pro、Flash 系。画像＝Nano Banana 2、動画＝Veo 系、音楽＝Lyria 3.5",
       "capabilities": [
         "テキスト／画像／音声／動画のマルチモーダル処理",
         "Deep Research",
@@ -197,7 +197,9 @@
         "Chrome auto browse",
         "エージェント実行",
         "Notebook",
-        "コーディング支援"
+        "コーディング支援",
+        "Tasks in Gemini",
+        "Project Genie（Ultra、インタラクティブワールド生成）"
       ],
       "strengths": [
         "Google サービス・Android・Chrome との統合の深さ",
@@ -220,9 +222,10 @@
       "cautions": "個人アカウントで Keep Activity オン時は会話がサービス改善に使われ一部は人間がレビュー。レビュー済みデータは最長3年保持され削除しても消えない（公式 Privacy Hub）。Workspace／API は学習に使われない規約",
       "sources": [
         "https://one.google.com/about/google-ai-plans/",
-        "https://gemini.google/jp/subscriptions/?hl=ja"
+        "https://gemini.google/jp/subscriptions/?hl=ja",
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
       ],
-      "checked_date": "2026-11-05",
+      "checked_date": "2026-11-16",
       "scores": {
         "reasoning": 4,
         "writing": 4,
@@ -621,12 +624,13 @@
       "also_in": [],
       "character": "軽音部の人気者",
       "summary": "歌詞とスタイル指定からボーカル入り楽曲を丸ごと生成する音楽AI",
-      "main_models": "v5 系（Basic は v4.5、Pro／Premier は v5・v4.5+。公式料金ページ）。上位にブラウザ DAW「Suno Studio」",
+      "main_models": "v6 系（v6・v6-wild は Pro／Premier 向け、v6-mini は無料含む全ユーザー。2026-09-09 発表、旧 v4〜v5.5 は新規生成から廃止）。上位にブラウザ DAW「Suno Studio」",
       "capabilities": [
         "作詞・作曲・歌唱までの一貫生成",
         "ステム分離",
         "自分の声の利用",
-        "カスタムモデル"
+        "カスタムモデル",
+        "1生成最大8分（v6 系）"
       ],
       "strengths": [
         "一貫生成の完成度",
@@ -647,7 +651,7 @@
         "https://suno.com/pricing",
         "https://www.theaitools.tech/2026/10/is-suno-free-for-commercial-use.html"
       ],
-      "checked_date": "2026-11-09",
+      "checked_date": "2026-11-16",
       "scores": {
         "reasoning": 2,
         "writing": 2,
@@ -1008,7 +1012,7 @@
       "also_in": [],
       "character": "言語の壁を越える調査員",
       "summary": "言語の壁を越える多言語検索を核に、資料作成まで一気通貫の日本発AI",
-      "main_models": "自社基盤モデルではなく各社の SOTA モデルを束ねて提供（テキスト＝GPT-6 Astra、Claude Fable、Grok 4.6 等。構成は随時更新）",
+      "main_models": "自社基盤モデルではなく各社の SOTA モデルを束ねて提供（テキスト＝GPT-6 Astra、Claude Fable、Grok 4.6 等。画像＝Nano Banana Pro、GPT-Image 2.6、Grok Imagine 2.0。構成は随時更新）",
       "capabilities": [
         "AI検索（無料でも使い放題）",
         "Pro検索",
@@ -1038,13 +1042,13 @@
         "Android",
         "Chrome拡張"
       ],
-      "cautions": "モデル構成は随時入れ替わる（公式明記）。クレジットは繰り越し不可（条件あり）。公式ページ間で Pro の検索上限の表記ゆれがあり掲載前に要統一確認",
+      "cautions": "モデル構成は随時入れ替わる（公式明記）。クレジットは繰り越し不可（条件あり）。Pro は「使い切っても 1日300回の Pro 検索はクレジット消費なし」と公式料金ページに明記（2026-11-16 確認）",
       "sources": [
         "https://felo.ai/ja/pricing",
         "https://felo.ai/ja/blog/about-us/",
         "https://openapi.felo.ai/ja/about"
       ],
-      "checked_date": "2026-11-05",
+      "checked_date": "2026-11-16",
       "scores": {
         "reasoning": 4,
         "writing": 3,
@@ -1071,7 +1075,7 @@
       ],
       "character": "段取り完璧な開発ディレクター",
       "summary": "仕様（スペック）を文書化してから実装する、スペック駆動開発のエージェントIDE",
-      "main_models": "デフォルトは Auto（モデルを混合しルーティング）。選択可能な例: GPT-5.6 系、Claude Opus 5／Sonnet 5 系、Haiku 4.5、DeepSeek 3.2、Qwen3 Coder Next 等（公式モデルページ）",
+      "main_models": "デフォルトは Auto（モデルを混合しルーティング）。選択可能な例: GPT-5.6 系、Claude Opus 5／Sonnet 5 系、Haiku 4.5、Claude Opus 4.8、Sonnet 4.6、MiniMax M2.5、GLM-5、DeepSeek 3.2、Qwen3 Coder Next 等（公式料金ページ FAQ）",
       "capabilities": [
         "スペック駆動開発（要件定義→設計→実装タスクの文書化）",
         "プロパティベーステストによる仕様整合の検証",
@@ -1097,6 +1101,7 @@
         "CLI",
         "Web（有料のみ）",
         "モバイルアプリ",
+        "Kiro Crew",
         "ACP互換IDE",
         "CI/CD自動化"
       ],
@@ -1106,7 +1111,7 @@
         "https://kiro.dev/faq/",
         "https://kiro.dev/docs/models/"
       ],
-      "checked_date": "2026-11-09",
+      "checked_date": "2026-11-16",
       "scores": {
         "reasoning": 3,
         "writing": 2,
@@ -1188,13 +1193,13 @@
       "also_in": [],
       "character": "編集まで面倒を見る映画スタジオの所長",
       "summary": "Veo を映画制作のワークフローに落とし込んだ Google 公式の AI 映像制作スタジオ",
-      "main_models": "中核は Veo 3.1（Lite／Fast／Quality）。動画編集に Gemini Omni Flash、画像に Nano Banana 系を統合した「製品」（モデルではない）",
+      "main_models": "中核は Veo 3.1 Lite と Gemini Omni Flash 1.2（現行）。Veo 3.1 Fast／Quality と Omni Flash 1.1 は 2026-12-05 廃止予定。Veo Extend は 2026-11-05 廃止。画像に Nano Banana 系を統合した「製品」（モデルではない）",
       "capabilities": [
         "テキスト→動画",
         "Frames to Video（開始・終了フレーム指定）",
         "Ingredients to Video（参照画像で一貫性）",
         "Veo 3.1 のネイティブ音声生成",
-        "Extend（延長）",
+        "Extend（延長。Veo Extend は 2026-11-05 廃止、Omni Flash 1.2 による延長に移行・加入者向け）",
         "Scenebuilder（シーン組み立て）",
         "動画編集",
         "カメラコントロール",
@@ -1207,11 +1212,11 @@
         "Google AI プランに含まれ Gemini 等と同一サブスクで使える"
       ],
       "weaknesses": [
-        "1クリップ最大8秒と短く長尺は継ぎ接ぎが前提",
-        "Veo 3.1 Quality は1生成100クレジットと試行錯誤のコストが高い",
+        "1クリップ最大8秒と短く長尺は継ぎ接ぎが前提（Omni Flash 1.2 では最大10秒・加入者は15秒）",
+        "Veo 3.1 Quality は1生成100クレジットと試行錯誤のコストが高い（2026-12-05 廃止予定）",
         "Web専用で Flow 自体の公開APIはない"
       ],
-      "pricing": "Flow 専用料金はなく Google AI プランに含まれる。無料 $0（毎日50クレジット、繰り越し不可）/ AI Plus $4.99/月（+200クレジット）/ AI Pro $19.99/月（+1,000）/ AI Ultra $99.99/月〜（+10,000〜）。生成単価は Veo 3.1 Lite 10クレジット、Fast 20、Quality 100（公式ヘルプ）",
+      "pricing": "Flow 専用料金はなく Google AI プランに含まれる。無料 $0（毎日50クレジット、繰り越し不可）/ AI Plus $4.99/月（+200クレジット）/ AI Pro $19.99/月（+1,000）/ AI Ultra $99.99/月〜（+10,000〜）。生成単価は Veo 3.1 Lite 10クレジット（Ultra は5）、Omni Flash 1.2 は 360p 1クレジット/秒・720p 3クレジット/秒（最大10秒、全ユーザー。加入者は15秒まで）。Veo 3.1 Fast 20／Quality 100 は 2026-12-05 廃止予定のため参考値（公式ヘルプ）",
       "platforms": [
         "Web（flow.google.com）"
       ],
@@ -1219,7 +1224,7 @@
       "sources": [
         "https://support.google.com/flow/answer/16526234?hl=en&ref_topic=16908930"
       ],
-      "checked_date": "2026-11-05",
+      "checked_date": "2026-11-16",
       "scores": {
         "reasoning": 3,
         "writing": 2,
@@ -1767,7 +1772,7 @@
       "also_in": [],
       "character": "ローカルとクラウドを行き来する実装エージェント",
       "summary": "ChatGPT プランに含まれる OpenAI のコーディングエージェント。リポジトリ全体を対象に、複数ファイル編集・コマンド実行・テスト・PR レビューまでをローカルとクラウドの両環境で自律的に進める",
-      "main_models": "GPT-6 世代（主力は GPT-6.1 Sol、軽量枠に GPT-6 Luna。Free／Go は GPT-6 Luna のみ。公式料金ページの上限表による）",
+      "main_models": "GPT-6 世代（主力は GPT-6.1 Sol、Work／Codex では GPT-6.1 Terra も Plus 以上で利用可（2026-10-26 から、Chat では利用不可）。軽量枠に GPT-6 Luna。Free／Go は GPT-6 Luna のみ。公式料金ページの上限表による）",
       "capabilities": [
         "リポジトリ全体を読み複数ファイルにまたがる編集・大規模リファクタリング・バグ修正",
         "ターミナル操作とテスト実行（ローカルはサンドボックス内）",
@@ -1804,7 +1809,7 @@
         "https://developers.openai.com/codex/pricing",
         "https://learn.chatgpt.com/codex/permissions"
       ],
-      "checked_date": "2026-11-05",
+      "checked_date": "2026-11-16",
       "scores": {
         "reasoning": 5,
         "writing": 2,
@@ -1980,7 +1985,7 @@
         "JetBrains プラグインはメンテナンスモード",
         "Max は $200/月と個人向けとしては高額"
       ],
-      "pricing": "現行 Devin のプラン表で確認（公式料金ページ）。Free $0（エージェントは軽いクォータ、Tab 補完とインライン編集は無制限）/ Pro $20/月（クォータ増量、全モデル利用可、SWE-2 無料利用、Devin Cloud へのアクセス）/ Max $200/月 / Teams $80/月＋$40/席 / Enterprise 個別見積もり。有料枠は日次・週次でリフレッシュするクォータ制",
+      "pricing": "現行 Devin のプラン表で確認（公式料金ページ）。Free $0（エージェントは軽いクォータ、Tab 補完とインライン編集は無制限）/ Pro $20/月（クォータ増量、全モデル利用可、SWE-2 無料利用、Devin Cloud へのアクセス）/ Max $200/月 / Teams $80/月＋$40/席 / Enterprise 個別見積もり。有料枠は日次・週次でリフレッシュするクォータ制。Pro／Max／Teams には「Use your ChatGPT plan」特典あり（個人の ChatGPT Go／Plus／Pro を連携すると Devin 内の GPT モデル利用分が ChatGPT 側の利用枠で課金され Devin クォータを消費しない。2026-10-09 発表）",
       "platforms": [
         "デスクトップ IDE（macOS／Windows／Linux、アプリ名は「Devin」）",
         "Devin CLI",
@@ -1994,7 +1999,7 @@
         "https://devin.ai/blog/windsurf-is-now-devin-desktop",
         "https://docs.devin.ai/desktop/devin-desktop-faq"
       ],
-      "checked_date": "2026-11-05",
+      "checked_date": "2026-11-16",
       "scores": {
         "reasoning": 4,
         "writing": 3,
@@ -2086,7 +2091,7 @@
       "also_in": [],
       "character": "パリ生まれの俊足な猫系オープン派",
       "summary": "フランス発・オープンウェイト志向の汎用チャット／エージェント。旧称 Le Chat。チャットに仕事用エージェント（Work Mode）とコーディングエージェント（Code Mode）を同梱し、EU 域内ホスティングと高速応答を売りにする",
-      "main_models": "フラッグシップ系 Mistral モデル群。現行フラッグシップは Mistral Large 4（2026-10、オープンウェイト、MoE 52B active／総1.05T、1Mコンテキスト）。改称時の既定だった Medium 3.5（推論 Magistral とコード Devstral を統合）は API ドキュメント上で deprecated となり、Vibe の現在の既定モデルの公式明示はない（未確認）。他に Small 系、Ministral 系、音声の Voxtral、コード特化の Codestral／Devstral 系",
+      "main_models": "フラッグシップ系 Mistral モデル群。現行フラッグシップは Mistral Large 4（2026-10、オープンウェイト、MoE 52B active／総1.05T、1Mコンテキスト）。Vibe の既定モデルは Mistral Medium（公式料金ページ FAQ で「For most tasks and coding: Mistral Medium」と明示）。Medium 3.5 は 2026-10-31 に deprecated、2027-04-30 に提供終了予定。他に Small 系、Ministral 系、音声の Voxtral、コード特化の Codestral／Devstral 系",
       "capabilities": [
         "AIチャット（Chat モード、Work Mode へ統合予定と公式発表）",
         "Work Mode（計画提示→承認→コネクタ横断で実行するタスクエージェント）",
@@ -2130,7 +2135,7 @@
         "https://mistral.ai/news/vibe-agent/",
         "https://docs.mistral.ai/models/mistral-large-4-0"
       ],
-      "checked_date": "2026-11-05",
+      "checked_date": "2026-11-16",
       "scores": {
         "reasoning": 4,
         "writing": 4,
@@ -2155,9 +2160,10 @@
       "also_in": [],
       "character": "管制室から分身を一斉に放つ、Google 仕込みのオペレーター",
       "summary": "Google のエージェントファーストな開発プラットフォーム。複数エージェントを並行管制するデスクトップアプリを中心に、CLI・IDE・他エディタ拡張・SDK を共通のエージェント基盤で提供し、計画→実装→検証までをエージェントに委任する形態",
-      "main_models": "Gemini 系が中核。現行フラッグシップは Gemini 4 Argon（Google AI Pro 以上）、全プラン共通の基盤は Gemini 3.8 Flash。他社モデルも選択可（Claude Sonnet 5.5／Opus 5.5 は Pro 以上。Claude 4.6 系と GPT-OSS-120b は公式ドキュメント上で 2026-11-18 に削除予定）",
+      "main_models": "Gemini 系が中核。最上位は Gemini 4 Carbon（Ultra／Enterprise のみ、2026-11-10 GA）、Gemini 4 Argon（Pro 以上）、全プラン共通の基盤は Gemini 4 Hydrogen（2026-11-12 GA）と Gemini 3.8 Flash。Orchestrator（Carbon／Argon が計画・レビュー、Hydrogen が実装を担当する2モデル協調モード）も追加。他社モデルも選択可（Claude Sonnet 5.5／Opus 5.5 は Pro 以上。Claude 4.6 系と GPT-OSS-120b は公式ドキュメント上で 2026-11-18 に削除予定）",
       "capabilities": [
         "複数エージェントの並行実行と管制（Antigravity App）",
+        "Orchestrator（計画は Carbon／Argon、実装は Hydrogen の2モデル協調）",
         "Git worktree で分離したサブエージェントの並行作業",
         "エージェント群によるチーム実行（/teamwork）",
         "複数ファイルの編集・ターミナル実行・テスト実行",
@@ -2196,7 +2202,7 @@
         "https://antigravity.google/docs/plans",
         "https://antigravity.google/docs/models/"
       ],
-      "checked_date": "2026-11-07",
+      "checked_date": "2026-11-16",
       "scores": {
         "reasoning": 4,
         "writing": 2,
