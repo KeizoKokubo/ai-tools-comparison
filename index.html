@@ -149,6 +149,29 @@ dl.detail dd{margin:0;color:var(--ink)}
 .fighter .fname{font-weight:900}
 .mini-bars{text-align:left;display:grid;gap:5px;margin-top:10px}
 .mini-bars .score-row{grid-template-columns:94px 1fr 22px;font-size:12px}
+/* news */
+.news-intro{background:var(--bg2);border:1.5px dashed var(--accent);border-radius:14px;padding:12px 16px;font-size:14px;margin:0 0 18px}
+.watchbadge{display:inline-block;background:var(--gold);color:#231a00;font-weight:900;font-size:11.5px;padding:2px 9px;border-radius:999px;border:1.5px solid rgba(35,26,0,.55);vertical-align:2px;margin-left:6px}
+.news-list{display:grid;gap:14px}
+.news-item{background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:16px 18px;box-shadow:var(--shadow)}
+.news-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12.5px;font-weight:700;color:var(--muted)}
+.news-date{font-variant-numeric:tabular-nums}
+.news-tag{display:inline-block;font-weight:900;font-size:11.5px;padding:2px 10px;border-radius:999px;color:#fff;background:var(--accent2)}
+.news-tag.price{background:#B7791F}
+.news-tag.end{background:#B42323}
+.news-tag.newtool{background:#0B6B5E}
+.news-tag.other{background:#6B6577}
+.news-tag.feat{background:#2D67D5}
+.news-date-head{font-family:"Zen Maru Gothic","Noto Sans JP",sans-serif;font-weight:900;font-size:21px;margin:26px 0 12px}
+.news-date-head:first-child{margin-top:4px}
+.news-item.watch{border:2px dashed var(--gold)}
+.news-tool{font-weight:900;color:var(--ink)}
+.news-item h3{margin:8px 0 4px;font-size:18px;line-height:1.45}
+.news-item .nbody{font-size:14px;color:var(--muted);margin:0}
+.news-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;align-items:center}
+.news-card-btn{border:2px solid var(--ink);background:var(--ink);color:var(--bg);border-radius:999px;padding:6px 14px;font-weight:900;font-size:13px;cursor:pointer;font-family:inherit}
+.news-src{font-size:12.5px;font-weight:700;color:var(--accent2);text-decoration:none}
+.news-src:hover{text-decoration:underline;text-underline-offset:3px}
 footer{padding:30px 0 50px;color:var(--muted);font-size:13.5px}
 footer h2{color:var(--ink)}
 :focus-visible{outline:3px solid var(--accent2);outline-offset:2px}
@@ -168,7 +191,7 @@ footer h2{color:var(--ink)}
         <span class="badge">スコアは <b>編集部評価（12軸・0〜5）</b></span>
         <span class="badge">週次更新チェック <b>設定済み</b></span>
       </div>
-      <p style="font-size:14px;color:var(--muted)">読み方： まずタブでカテゴリを絞る → カードをタップして詳細とレーダーを見る → 最後にバトルで3人を戦わせる。</p>
+      <p style="font-size:14px;color:var(--muted)">読み方： まずタブでカテゴリを絞る → カードをタップして詳細とレーダーを見る → 最後にバトルで3人を戦わせる。最近の動きだけ知りたいときは「📰 ニュース」タブへ。</p>
     </div>
     <div class="hero-imgs" aria-hidden="true">
       <img data-char="chatgpt" alt="">
@@ -183,7 +206,7 @@ footer h2{color:var(--ink)}
   <section id="chars">
     <div class="sec-head"><h2>キャラクター図鑑</h2><p>キャッチフレーズは「〇〇な△△、ツール名」。カードをタップで詳細＆レーダーチャート。</p></div>
     <div class="tabs" role="tablist" id="tabs"></div>
-    <div class="sortbar">
+    <div class="sortbar" id="sortbar">
       <div class="seg" role="group" aria-label="並び順の切り替え">
         <button type="button" id="sortReg" aria-pressed="true">登録順</button>
         <button type="button" id="sortFit" aria-pressed="false">適応度順</button>
@@ -191,9 +214,14 @@ footer h2{color:var(--ink)}
       <button type="button" class="fit-open" id="fitOpen">⚖️ 自分仕様で並び替え</button>
       <span class="fit-hint">重視したい能力をスライダーで決めると、あなたへの適応度が高い順に並び替えます。</span>
     </div>
-    <p class="also-note"><span class="alsobadge-mini">兼用</span> バッジのカードは、本業は別ジャンルのツールです。そのジャンルでもちょっとした用途なら使えるため、各カテゴリタブでは本業勢の後ろに並べて表示しています（「すべて」タブでは通常どおり1回だけ表示）。</p>
+    <p class="also-note" id="alsoNote"><span class="alsobadge-mini">兼用</span> バッジのカードは、本業は別ジャンルのツールです。そのジャンルでもちょっとした用途なら使えるため、各カテゴリタブでは本業勢の後ろに並べて表示しています（「すべて」タブでは通常どおり1回だけ表示）。</p>
     <div class="grid" id="grid"></div>
     <p id="count" style="color:var(--muted);font-size:13.5px"></p>
+    <div id="newsView" hidden>
+      <p class="news-intro">📰 <strong>AIツールの最新ニュース</strong> ― 週次チェックで確認した変更を、読みやすくまとめたものです。新しい順に、日付ごとにまとめて掲載しています。<br>「<strong>評価準備中</strong>」は、まだ図鑑に正式収録していない新ツール・新サービスの速報です。登場したばかりで情報が固まっていないため、スコアは付けていません。</p>
+      <div id="newsList"></div>
+      <p id="newsCount" style="color:var(--muted);font-size:13.5px"></p>
+    </div>
   </section>
 
   <section id="battle-sec">
@@ -220,6 +248,7 @@ footer h2{color:var(--ink)}
   <p>・ レーダーチャートとバトルのスコア（12軸・各0〜5。画像・動画・音楽のジャンル軸は「未対応＝0」、他の軸は1〜5）は、<strong>公式スペックではなく、調査結果にもとづく編集部の主観評価</strong>です（<code>data/scores.yaml</code>）。軸は「推論・数学／文章生成／コーディング／調査・検索／画像生成／動画生成／音楽・サウンド／エージェント実行／連携・拡張／速度・応答性／日本語・多言語／コスパ」。</p>
   <p>・ キャラクター設定は各ツールの実際の特徴・機能にもとづいており、根拠はプロジェクトのキャラ設定シート（v1）に記録しています。キャライラストは本ページ用に生成したオリジナルイラストです。</p>
   <p>・ 更新について： AIツールの情報は短期間で変わるため、週次の更新チェックを設定済みです。古い情報に気づいたら、公式ページで再確認のうえデータを更新します。</p>
+  <p>・ ニュースについて： 「📰 ニュース」タブの要約は、週次更新チェック（2026-11-09／2026-11-16 実施分）の結果を読み手向けに書き直したものです。「評価準備中」の項目は、登場したばかりで編集部スコアがまだ固まっていない新モデル・新機能・新規ツールで、図鑑の37ツールやスコアには含めていません。十分に情報がそろったものから、従来どおり調査・採点のうえで正式収録します。</p>
 </footer>
 
 <dialog id="fitDialog" aria-label="自分仕様で並び替え">
@@ -346,7 +375,7 @@ function applyVars(el,t){
   el.style.setProperty("--ct-d",t.colorDark);
   el.style.setProperty("--cb",t.colorLight);
 }
-var CATS=[["all","すべて"],["general","汎用チャット"],["agent","エージェント・検索・開発"],["code","コード生成"],["video","動画生成"],["image","画像生成"],["music","音楽生成"],["sfx","効果音生成"],["visual","ビジュアル編集補助"]];
+var CATS=[["all","すべて"],["general","汎用チャット"],["agent","エージェント・検索・開発"],["code","コード生成"],["video","動画生成"],["image","画像生成"],["music","音楽生成"],["sfx","効果音生成"],["visual","ビジュアル編集補助"],["news","📰 ニュース"]];
 var CATLABEL={general:"汎用チャット",agent:"エージェント・検索・開発",code:"コード生成",video:"動画生成",image:"画像生成",music:"音楽生成",sfx:"効果音生成",visual:"ビジュアル編集補助"};
 function byId(id){for(var i=0;i<TOOLS.length;i++)if(TOOLS[i].id===id)return TOOLS[i];return null}
 function total(t){return t.scores.reduce(function(a,b){return a+b},0)}
@@ -370,7 +399,7 @@ var tabsEl=document.getElementById("tabs"), gridEl=document.getElementById("grid
 CATS.forEach(function(c){
   var b=document.createElement("button"); b.className="tab"; b.textContent=c[1]; b.setAttribute("role","tab");
   b.setAttribute("aria-selected", c[0]===curCat?"true":"false");
-  b.onclick=function(){curCat=c[0]; var ts=tabsEl.querySelectorAll(".tab"); for(var i=0;i<ts.length;i++)ts[i].setAttribute("aria-selected","false"); b.setAttribute("aria-selected","true"); renderCards();};
+  b.onclick=function(){curCat=c[0]; var ts=tabsEl.querySelectorAll(".tab"); for(var i=0;i<ts.length;i++)ts[i].setAttribute("aria-selected","false"); b.setAttribute("aria-selected","true"); if(curCat==="news"){showNews();}else{hideNews(); renderCards();}};
   tabsEl.appendChild(b);
 });
 function isAlsoIn(t,cat){return !!(t.also&&t.also.indexOf(cat)>=0)}
@@ -407,6 +436,67 @@ function renderCards(){
   document.getElementById("count").textContent=n+" ツールを表示中（全"+TOOLS.length+"ツール）";
 }
 renderCards();
+
+/* News tab (data: data/news.yaml — 週次チェックが読み手向けに書き直して追記する正本を埋め込み） */
+var TAG_LABELS={"new-model":"新モデル","pricing":"料金・プラン","feature":"新機能","sunset":"提供終了・廃止予定","new-tool":"新ツール","info":"お知らせ"};
+var TAG_CLASS={"new-model":"","pricing":"price","feature":"feat","sunset":"end","new-tool":"newtool","info":"other"};
+var NEWS=[
+{date:"2026-11-16",tag:"new-model",status:"rated",tool:"gemini",tool_name:"Gemini",title:"Gemini に新モデル「4 Carbon」と「4 Hydrogen」が登場",body:"Google の Gemini に新しいモデルが2つ加わりました。最上位の「Gemini 4 Carbon」は AI Ultra プラン専用、「Gemini 4 Hydrogen」は全プランで使える高速・軽量モデルです。あわせて、調べ物や作業を任せられる「Tasks in Gemini」も追加されました。料金プラン自体に変更はありません。",source:"https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"},
+{date:"2026-11-16",tag:"new-model",status:"rated",tool:"antigravity",tool_name:"Google Antigravity",title:"Google Antigravity の最上位モデルが Gemini 4 Carbon に。2モデル協調の「Orchestrator」も",body:"コーディングエージェント「Google Antigravity」で使える最上位モデルが Gemini 4 Carbon（Ultra／Enterprise のみ）になりました。新機能「Orchestrator」は、上位モデルが計画とレビュー、軽量モデルが実装を担当する分担モードで、大きなタスクを効率よく進められます。",source:"https://antigravity.google/docs/models/"},
+{date:"2026-11-16",tag:"new-tool",status:"watch",tool:null,tool_name:"Project Genie（Google）",title:"Project Genie：対話で「世界」を生成する Google の実験的プロジェクト",body:"Google が AI Ultra 向けに提供を始めた実験的機能です。テキストや画像から、歩き回れるインタラクティブな世界（環境）を生成します。まだ研究段階の提供ですが、ゲームやバーチャル空間の作り方が変わる可能性があり、動向を追っています。一般提供や料金体系が固まってきたら、この図鑑への正式収録も検討します。",source:"https://one.google.com/about/google-ai-plans/"},
+{date:"2026-11-16",tag:"sunset",status:"rated",tool:"google-flow",tool_name:"Google Flow",title:"Google Flow の「Veo Extend」が終了。延長の主役は Omni Flash 1.2 へ",body:"動画生成サービス Google Flow で、動画を延長する「Veo Extend」が2026年11月5日に終了し、Gemini Omni Flash 1.2 による延長に移行しました。従来の Veo 3.1 Fast／Quality も12月5日に廃止予定です。Flow を使っている人は、モデルの選び直しが必要になります。",source:"https://support.google.com/flow/answer/16526234?hl=en&ref_topic=16908930"},
+{date:"2026-11-16",tag:"new-model",status:"rated",tool:"suno",tool_name:"Suno",title:"Suno が v6 世代に。1回の生成で最大8分の楽曲が作れるように",body:"音楽生成の Suno が新しい「v6」世代になりました。有料プラン向けの v6／v6-wild と、無料でも使える v6-mini があり、1回の生成で最大8分の曲が作れます。旧バージョン（v4〜v5.5）は新規生成から順次外れています。（複数メディアの報道に基づく情報で、公式ページでの最終確認を進めています）",source:"https://suno.com/pricing"},
+{date:"2026-11-16",tag:"feature",status:"rated",tool:"windsurf",tool_name:"Devin Desktop（旧 Windsurf）",title:"Devin Desktop（旧 Windsurf）が自分の ChatGPT プランと連携可能に",body:"Devin Desktop の有料プランで、個人の ChatGPT プラン（Go／Plus／Pro）を連携できるようになりました。連携すると、Devin 内で GPT モデルを使う分が ChatGPT 側の利用枠でまかなわれ、Devin の利用枠を消費しません。両方を契約している人にはうれしい変更です。",source:"https://windsurf.com/pricing"},
+{date:"2026-11-16",tag:"new-model",status:"rated",tool:"kiro",tool_name:"Kiro",title:"Kiro で選べるモデルが拡大。Claude Opus 4.8 や GLM-5 など",body:"開発特化 AI の Kiro で、Claude Opus 4.8、Sonnet 4.6、MiniMax M2.5、GLM-5 などが新たに選べるようになりました。複数エージェントで開発を進める「Kiro Crew」も追加されています。料金に変更はありません。",source:"https://kiro.dev/pricing/"},
+{date:"2026-11-16",tag:"new-model",status:"rated",tool:"codex",tool_name:"Codex",title:"Codex に中位モデル「GPT-6.1 Terra」が追加（Plus 以上）",body:"OpenAI のコーディングエージェント Codex で、Plus 以上のプランに「GPT-6.1 Terra」が使えるようになりました。最上位の Sol より軽い場面向けの中位モデルで、Work／Codex でのみ利用できます（通常の Chat では使えません）。",source:"https://developers.openai.com/codex/pricing"},
+{date:"2026-11-16",tag:"new-model",status:"rated",tool:"felo",tool_name:"Felo",title:"Felo の画像生成が GPT-Image 2.6 に更新",body:"検索・調査 AI の Felo で、画像生成モデルが GPT-Image 2.6 に更新されました。あわせて Pro プランの検索上限の案内が明確になり、「上限を使い切っても1日300回の Pro 検索はクレジット消費なし」と公式に明記されています。",source:"https://felo.ai/ja/pricing"},
+{date:"2026-11-09",tag:"pricing",status:"rated",tool:"kling",tool_name:"Kling",title:"Kling の最上位プランが刷新。旧 Ultra は終了し「Ultra+」へ",body:"動画生成 Kling の旗艦モデルが 4.0 になりました（30秒生成・ネイティブ音声対応）。あわせて最上位プランの旧「Ultra」は新規受付を終了し、「Ultra+」（定価 $619、57,000クレジット）に置き換わっています。Standard／Pro の料金は据え置きです。",source:"https://kling.ai/app/membership/membership-plan"},
+{date:"2026-11-09",tag:"new-model",status:"rated",tool:"flux",tool_name:"FLUX",title:"FLUX が第3世代に。低価格の「Klein」も登場",body:"画像生成の FLUX が第3世代（FLUX 3 Image）になりました。1枚 $0.048（1K サイズ）です。軽量版の「Klein」は1枚 $0.009 と安く、年間売上500万ドル未満の事業者は商用利用も可能です。",source:"https://bfl.ai/pricing"},
+{date:"2026-11-09",tag:"new-model",status:"rated",tool:"midjourney",tool_name:"Midjourney",title:"Midjourney の標準モデルが V8.2 に",body:"Midjourney の現在の標準モデルが V8.2 になりました（V8.1／V7／V6.1 も選択可能）。料金プラン（Basic $10〜）に変更はありません。",source:null},
+{date:"2026-11-09",tag:"pricing",status:"rated",tool:"claude",tool_name:"Claude",title:"Claude の Max／Ultra に API クレジットが付帯",body:"Claude の Max プランには月 $100 分、Ultra プランには月 $200 分の API クレジットが含まれることが分かりました。チャットだけでなく API 経由でも Claude を使う人には、実質的な値下げと言えます。",source:"https://claude.com/ja/pricing"},
+{date:"2026-11-09",tag:"new-model",status:"rated",tool:"gpt-image",tool_name:"ChatGPT 画像生成／GPT Image",title:"ChatGPT の画像生成が「GPT Image 2」世代に",body:"OpenAI の画像生成モデルが GPT Image 2 系になりました。ChatGPT の画像生成や API で順次使われています。",source:"https://developers.openai.com/codex/pricing"},
+{date:"2026-11-09",tag:"new-model",status:"rated",tool:"firefly",tool_name:"Adobe Firefly",title:"Adobe Firefly の画像モデルが「Image 5」に",body:"Adobe Firefly の現行画像モデルが Firefly Image 5 になりました（生成1回あたり10クレジット）。料金プランに変更はありません。",source:null},
+{date:"2026-11-09",tag:"info",status:"rated",tool:"grok",tool_name:"Grok",title:"Grok の提供会社が「SpaceX Super Intelligence」に改称",body:"Grok を提供する会社の名前が xAI から「SpaceX Super Intelligence」に変わりました。Grok の料金やモデル（Grok 4.7）に変更はありません。",source:"https://docs.x.ai/developers/models"},
+{date:"2026-11-09",tag:"pricing",status:"rated",tool:"kiro",tool_name:"Kiro",title:"Kiro に Teams 向けクレジットプール制が登場",body:"Kiro に、チームでクレジットを共有できる Teams 向けプール制（$20/席/月、1席あたり500クレジット、2席以上）が追加されました。初回アップグレード特典（初月無料＋500トライアルクレジット）も始まっています。",source:"https://kiro.dev/pricing/"},
+{date:"2026-11-09",tag:"pricing",status:"rated",tool:"canva-ai",tool_name:"Canva AI",title:"Canva の AI 利用枠が3区分に整理。Teams は Business へ統合",body:"Canva の AI 利用枠が Standard／Premium／Ultra の3区分の共有枠として整理されました（Pro は無料の10倍、Business は20倍）。あわせて「Canva AI 2.0」が新機能として掲載され、Teams プランは新規受付を終了して Business に統合されています。",source:"https://www.canva.com/pricing/"}
+];
+var newsViewEl=document.getElementById("newsView"), newsListEl=document.getElementById("newsList");
+function newsDateLabel(d){var p=d.split("-");return p[0]+"年"+parseInt(p[1],10)+"月"+parseInt(p[2],10)+"日"}
+function renderNews(){
+  var items=NEWS.slice(0,30), html="", lastDate="";
+  items.forEach(function(nw){
+    if(nw.date!==lastDate){ if(lastDate)html+='</div>'; html+='<h3 class="news-date-head">'+newsDateLabel(nw.date)+'</h3><div class="news-list">'; lastDate=nw.date; }
+    var watch=nw.status==="watch";
+    html+='<article class="news-item'+(watch?" watch":"")+'">'
+      +'<div class="news-meta"><span class="news-tag '+(TAG_CLASS[nw.tag]||"")+'">'+esc(TAG_LABELS[nw.tag]||nw.tag)+'</span><span class="news-tool">'+esc(nw.tool_name)+'</span>'+(watch?'<span class="watchbadge">評価準備中</span>':'')+'</div>'
+      +'<h3>'+esc(nw.title)+'</h3><p class="nbody">'+esc(nw.body)+'</p>';
+    var acts="";
+    if(!watch&&nw.tool)acts+='<button type="button" class="news-card-btn" data-news-card="'+nw.tool+'">カードを見る</button>';
+    if(nw.source)acts+='<a class="news-src" href="'+nw.source+'" target="_blank" rel="noopener">出典 '+EXT_ICON.replace('width="13" height="13"','width="11" height="11"')+' '+esc(officialHost(nw.source))+'</a>';
+    if(acts)html+='<div class="news-actions">'+acts+'</div>';
+    html+='</article>';
+  });
+  if(lastDate)html+='</div>';
+  newsListEl.innerHTML=html;
+  var btns=newsListEl.querySelectorAll("[data-news-card]");
+  for(var i=0;i<btns.length;i++)(function(b){ b.addEventListener("click",function(){ openModal(b.getAttribute("data-news-card"), null); }); })(btns[i]);
+  document.getElementById("newsCount").textContent="ニュース "+items.length+" 件を表示中（出典：週次更新チェック 2026-11-09／2026-11-16 実施分）";
+}
+function showNews(){
+  gridEl.style.display="none";
+  document.getElementById("count").style.display="none";
+  document.getElementById("sortbar").style.display="none";
+  document.getElementById("alsoNote").style.display="none";
+  newsViewEl.hidden=false;
+  renderNews();
+}
+function hideNews(){
+  newsViewEl.hidden=true;
+  gridEl.style.display="";
+  document.getElementById("count").style.display="";
+  document.getElementById("sortbar").style.display="";
+  document.getElementById("alsoNote").style.display="";
+}
 
 /* Fitness sort UI */
 var fitDialog=document.getElementById("fitDialog");
