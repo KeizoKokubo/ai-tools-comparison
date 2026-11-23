@@ -1,6 +1,6 @@
 {
   "title": "AIツール比較データ（公開版）",
-  "checked_date": "2026-11-16",
+  "checked_date": "2026-11-23",
   "note": "料金・モデル等は各社公式ページ等の公開情報に基づく（出典は各ツールに記載）。scores は調査に基づく編集部評価（1〜5）であり公式スペックではない。",
   "axes": [
     {
@@ -85,7 +85,7 @@
         "プラン・モデル名が頻繁に変わり分かりにくい",
         "無料／Go は多くの市場で広告表示あり（二次情報）"
       ],
-      "pricing": "Free $0 / Go $8/月 / Plus $20/月 / Pro $100/月〜 / Business $20/席（年払い） / Enterprise 個別見積（公式・USD・税別）",
+      "pricing": "Free $0 / Go $8/月 / Plus $20/月 / Pro $100/月〜（月 $100〜$500 分の API クレジット付き、2026-10-28 開始） / Business $20/席（年払い） / Enterprise 個別見積（公式・USD・税別）",
       "platforms": [
         "Web",
         "iOS",
@@ -100,7 +100,7 @@
         "https://developers.openai.com/api/docs/pricing",
         "https://help.openai.com/ja-jp/articles/6950777-what-is-chatgpt-plus"
       ],
-      "checked_date": "2026-11-05",
+      "checked_date": "2026-11-23",
       "scores": {
         "reasoning": 5,
         "writing": 5,
@@ -188,7 +188,7 @@
       ],
       "character": "学校中と顔が利く情報委員",
       "summary": "Google サービス群と一体化した、ネイティブ・マルチモーダルの汎用AI",
-      "main_models": "Gemini 4 Carbon（最上位、2026-11-10 GA、Ultra専用）、Gemini 4 Argon（Pro以上）、Gemini 4 Hydrogen（2026-11-12 GA、全ティア・高速軽量）、3.1 Pro、Flash 系。画像＝Nano Banana 2、動画＝Veo 系、音楽＝Lyria 3.5",
+      "main_models": "Gemini 4 Carbon（最上位、2026-11-10 GA、Ultra専用）、Gemini 4 Neon（2026-11-18発表。アプリでは Argon／3.1 Pro に代わる Pro以上の主力。API では Argon も存続）、Gemini 4 Hydrogen（2026-11-12 GA、全ティア・高速軽量）、Flash 系。画像＝Nano Banana 2、動画＝Veo 系、音楽＝Lyria 3.5",
       "capabilities": [
         "テキスト／画像／音声／動画のマルチモーダル処理",
         "Deep Research",
@@ -219,13 +219,14 @@
         "Google Workspace 各アプリ",
         "API（AI Studio／Vertex AI）"
       ],
-      "cautions": "個人アカウントで Keep Activity オン時は会話がサービス改善に使われ一部は人間がレビュー。レビュー済みデータは最長3年保持され削除しても消えない（公式 Privacy Hub）。Workspace／API は学習に使われない規約",
+      "cautions": "個人アカウントでは「履歴」と「トレーニング利用」が分離された新設定へ移行中（2026-11-16 公式発表、今後数週間で順次適用）。履歴を残したままトレーニング利用だけを切れる。履歴をオフにしても新しく作るチャットは約2か月保存され、応答・フィードバック処理・保護に使われる。レビュー済みデータは最長3年保持され削除しても消えない（公式 Privacy Hub）。Workspace／API は学習に使われない規約",
       "sources": [
         "https://one.google.com/about/google-ai-plans/",
         "https://gemini.google/jp/subscriptions/?hl=ja",
-        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+        "https://blog.google/innovation-and-ai/products/gemini-app/updated-controls/"
       ],
-      "checked_date": "2026-11-16",
+      "checked_date": "2026-11-23",
       "scores": {
         "reasoning": 4,
         "writing": 4,
@@ -519,7 +520,7 @@
       "also_in": [],
       "character": "未設定（ChatGPT の一機能として扱う）",
       "summary": "ChatGPT の会話の中で生成・編集できる画像生成機能",
-      "main_models": "GPT Image 2 系（OpenAI 公式料金ページに GPT-Image-2 の記載あり。版名の表記はサービスにより揺れがある）",
+      "main_models": "GPT Image 2.6 系（Images 2.6、2026-11-04 発表。Flare＝高速・低品質、Sunburst＝精密編集向け。ChatGPT／Codex／API で提供）。2.5 系（GPT-Image-2.5 Flare／Sunburst）も公式 API ドキュメントで確認済み",
       "capabilities": [
         "画像生成",
         "部分編集",
@@ -544,9 +545,10 @@
       "cautions": "生成物には C2PA 等の来歴情報。出力の権利はユーザー帰属・商用可とされるが、純粋な AI 生成物は著作権保護を受けない可能性があり、他者権利侵害の責任はユーザー側",
       "sources": [
         "https://developers.openai.com/codex/pricing",
-        "https://www.toolcolumn.com/learn/is-chatgpt-images-free"
+        "https://www.toolcolumn.com/learn/is-chatgpt-images-free",
+        "https://developers.openai.com/api/docs/models/gpt-image-2.5-flare"
       ],
-      "checked_date": "2026-11-09",
+      "checked_date": "2026-11-23",
       "scores": {
         "reasoning": 3,
         "writing": 1,
@@ -752,7 +754,7 @@
         "https://www.canva.com/pricing/",
         "https://www.eesel.ai/blog/canva-ai-pricing"
       ],
-      "checked_date": "2026-11-09",
+      "checked_date": "2026-11-23",
       "scores": {
         "reasoning": 3,
         "writing": 3,
@@ -1075,7 +1077,7 @@
       ],
       "character": "段取り完璧な開発ディレクター",
       "summary": "仕様（スペック）を文書化してから実装する、スペック駆動開発のエージェントIDE",
-      "main_models": "デフォルトは Auto（モデルを混合しルーティング）。選択可能な例: GPT-5.6 系、Claude Opus 5／Sonnet 5 系、Haiku 4.5、Claude Opus 4.8、Sonnet 4.6、MiniMax M2.5、GLM-5、DeepSeek 3.2、Qwen3 Coder Next 等（公式料金ページ FAQ）",
+      "main_models": "デフォルトは Auto（モデルを混合しルーティング）。選択可能な例: GPT-5.6 系（Sol／Terra／Luna）、Claude Opus 5.5／Sonnet 5.5／Haiku 5.5、Claude Opus 5／Sonnet 5 系、Haiku 4.5、Claude Opus 4.8／4.7／4.5、Sonnet 4.6／4.0、Claude Fable 5.1（Enterprise 限定）、Grok 4.7、Kimi K3、MiniMax M2.5／M2.1、GLM-5、DeepSeek 3.2、Qwen3 Coder Next 等（公式モデル表）",
       "capabilities": [
         "スペック駆動開発（要件定義→設計→実装タスクの文書化）",
         "プロパティベーステストによる仕様整合の検証",
@@ -1111,7 +1113,7 @@
         "https://kiro.dev/faq/",
         "https://kiro.dev/docs/models/"
       ],
-      "checked_date": "2026-11-16",
+      "checked_date": "2026-11-23",
       "scores": {
         "reasoning": 3,
         "writing": 2,
@@ -1136,7 +1138,7 @@
       "also_in": [],
       "character": "長回し自慢の撮影監督",
       "summary": "音声と映像を同時生成し、1回最大30秒と多数の参照素材を扱える ByteDance の動画生成モデルファミリー（単体アプリはなく Dreamina 等のアプリか BytePlus API 経由で利用）",
-      "main_models": "Seedance 2.5（現行フラッグシップ、2026-07-31 公式発表）。2.0 系・1.5 Pro・1.0 Pro 系も API で提供継続",
+      "main_models": "Seedance 2.5（現行フラッグシップ、2026-07-31 公式発表）。Seedance 2.5 Flash（2026-11-12 発表、API は 2026-11-15 に BytePlus ModelArk で開通。旗艦の軽量・高速版で約2倍速・約34%安い。480p／720p のみ）。2.0 系・1.5 Pro・1.0 Pro 系も API で提供継続",
       "capabilities": [
         "テキスト／画像／リファレンス→動画",
         "音声と映像の同時生成",
@@ -1168,7 +1170,7 @@
         "https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5",
         "https://seed.bytedance.com/seedance2_5"
       ],
-      "checked_date": "2026-11-05",
+      "checked_date": "2026-11-23",
       "scores": {
         "reasoning": 2,
         "writing": 1,
@@ -1420,7 +1422,7 @@
       "also_in": [],
       "character": "フォーリーアーティストな音響職人",
       "summary": "テキストで音を説明すると最大30秒の効果音を1回で4バリエーション生成する、ElevenLabs の効果音専用機能（全体のクレジットを共有）",
-      "main_models": "SFX v2（既定）、SFX v3（2026-10-29 発表、限定提供）（いずれも公式引用の二次情報）",
+      "main_models": "SFX v3（Web アプリの既定。2026-10-29 発表）、SFX v2（API の既定。2027-03-01 に削除予定）（いずれも公式引用の二次情報）",
       "capabilities": [
         "テキストプロンプト（最大450文字）からの効果音生成",
         "1回で4バリエーション提示",
@@ -1451,7 +1453,7 @@
         "https://www.stork.ai/blog/elevenlabs-sound-effects-2026",
         "https://getcartsignal.com/tools/elevenlabs"
       ],
-      "checked_date": "2026-11-09",
+      "checked_date": "2026-11-23",
       "scores": {
         "reasoning": 3,
         "writing": 1,
@@ -1706,7 +1708,7 @@
       "also_in": [],
       "character": "出典を必ず添える俊足リサーチャー",
       "summary": "出典リンク付きで即答する「回答エンジン」型AI検索の代表格。自社 Sonar と各社フロンティアモデルを使い分け、Deep Research からエージェント実行まで調査業務を広く担う",
-      "main_models": "既定は自社 Sonar 系（検索特化）。有料プランの Search では他社モデルも選択可能（Pro: GPT-6.1 Sol、Claude Sonnet 5.5、Gemini 3.8 Flash、Kimi K3、GLM 5.3、Grok 4.7 等。Max で GPT-6 Astra、Claude Opus 5.5 等が追加。公式ヘルプセンターの 2026-10-27 時点の表で、顔ぶれは変更されうると公式明記）",
+      "main_models": "既定は自社 Sonar 系（検索特化）。有料プランの Search では他社モデルも選択可能（Pro: GPT-6.2 Sol、Gemini 4 Neon、Claude Sonnet 5.5、Kimi K3、GLM 5.3、Grok 4.7、Nemotron 3.5 Super VL 等。Max で GPT-6.2 Astra、Gemini 4 Carbon、Claude Opus 5.5、Claude Fable 5.2 等が追加。公式ヘルプセンターの 2026-11-19 時点の表で、顔ぶれは変更されうると公式明記）",
       "capabilities": [
         "AI検索（全回答に出典・引用リンク付き、Pro Search で深度向上）",
         "Deep Research（多段検索と推論によるレポート生成）",
@@ -1747,7 +1749,7 @@
         "https://www.perplexity.ai/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you",
         "https://docs.perplexity.ai/docs/agent-api/models"
       ],
-      "checked_date": "2026-11-05",
+      "checked_date": "2026-11-23",
       "scores": {
         "reasoning": 4,
         "writing": 4,
@@ -1772,7 +1774,7 @@
       "also_in": [],
       "character": "ローカルとクラウドを行き来する実装エージェント",
       "summary": "ChatGPT プランに含まれる OpenAI のコーディングエージェント。リポジトリ全体を対象に、複数ファイル編集・コマンド実行・テスト・PR レビューまでをローカルとクラウドの両環境で自律的に進める",
-      "main_models": "GPT-6 世代（主力は GPT-6.1 Sol、Work／Codex では GPT-6.1 Terra も Plus 以上で利用可（2026-10-26 から、Chat では利用不可）。軽量枠に GPT-6 Luna。Free／Go は GPT-6 Luna のみ。公式料金ページの上限表による）",
+      "main_models": "GPT-6 世代（GPT-6.2 Sol／GPT-6.2 Astra を 2026-11-17 に追加。従来の主力は GPT-6.1 Sol、Work／Codex では GPT-6.1 Terra も Plus 以上で利用可（2026-10-26 から、Chat では利用不可）。軽量枠に GPT-6 Luna。Free／Go は GPT-6 Luna のみ。公式料金ページの上限表による）",
       "capabilities": [
         "リポジトリ全体を読み複数ファイルにまたがる編集・大規模リファクタリング・バグ修正",
         "ターミナル操作とテスト実行（ローカルはサンドボックス内）",
@@ -1809,7 +1811,7 @@
         "https://developers.openai.com/codex/pricing",
         "https://learn.chatgpt.com/codex/permissions"
       ],
-      "checked_date": "2026-11-16",
+      "checked_date": "2026-11-23",
       "scores": {
         "reasoning": 5,
         "writing": 2,
@@ -1970,7 +1972,8 @@
         "DeepWiki（コードベースの Wiki 化）",
         "Fast Context（自社モデルによる高速な文脈検索）",
         "Rules（.devin/rules 等、AGENTS.md や .cursor/rules の取り込みにも対応）",
-        "Devin Cloud への委任、MCP 対応"
+        "Devin Cloud への委任、MCP 対応",
+        "Devin Apps（社内向けプライベート Web アプリの構築・ホスト、2026-11-13 発表・段階的ロールアウト）"
       ],
       "strengths": [
         "ローカルとクラウドのエージェントを横断管理でき、大きなタスクを複数エージェントに分割して並行実行し PR 単位でレビューできる編成力",
@@ -1999,7 +2002,7 @@
         "https://devin.ai/blog/windsurf-is-now-devin-desktop",
         "https://docs.devin.ai/desktop/devin-desktop-faq"
       ],
-      "checked_date": "2026-11-16",
+      "checked_date": "2026-11-23",
       "scores": {
         "reasoning": 4,
         "writing": 3,
@@ -2160,10 +2163,10 @@
       "also_in": [],
       "character": "管制室から分身を一斉に放つ、Google 仕込みのオペレーター",
       "summary": "Google のエージェントファーストな開発プラットフォーム。複数エージェントを並行管制するデスクトップアプリを中心に、CLI・IDE・他エディタ拡張・SDK を共通のエージェント基盤で提供し、計画→実装→検証までをエージェントに委任する形態",
-      "main_models": "Gemini 系が中核。最上位は Gemini 4 Carbon（Ultra／Enterprise のみ、2026-11-10 GA）、Gemini 4 Argon（Pro 以上）、全プラン共通の基盤は Gemini 4 Hydrogen（2026-11-12 GA）と Gemini 3.8 Flash。Orchestrator（Carbon／Argon が計画・レビュー、Hydrogen が実装を担当する2モデル協調モード）も追加。他社モデルも選択可（Claude Sonnet 5.5／Opus 5.5 は Pro 以上。Claude 4.6 系と GPT-OSS-120b は公式ドキュメント上で 2026-11-18 に削除予定）",
+      "main_models": "Gemini 系が中核。最上位は Gemini 4 Carbon（Ultra／Enterprise のみ、2026-11-10 GA）、Gemini 4 Neon（2026-11-18発表、Pro以上。新規会話の既定モデルで Orchestrator の既定プランナー）、Gemini 4 Argon（Pro 以上）、全プラン共通の基盤は Gemini 4 Hydrogen（2026-11-12 GA）と Gemini 3.8 Flash。Orchestrator（Neon 既定で計画・レビュー、Hydrogen が実装を担当する2モデル協調モード）も追加。他社モデルも選択可（Claude Sonnet 5.5／Opus 5.5 は Pro 以上。Claude 4.6 系と GPT-OSS-120b は公式ドキュメント上で 2026-11-30 に削除予定へ延期）。Enterprise 限定で Gemini 3.7 Flash／3.6 Flash／3.1 Pro も選択可",
       "capabilities": [
         "複数エージェントの並行実行と管制（Antigravity App）",
-        "Orchestrator（計画は Carbon／Argon、実装は Hydrogen の2モデル協調）",
+        "Orchestrator（計画は Neon 既定・Carbon／Argon も選択可、実装は Hydrogen の2モデル協調）",
         "Git worktree で分離したサブエージェントの並行作業",
         "エージェント群によるチーム実行（/teamwork）",
         "複数ファイルの編集・ターミナル実行・テスト実行",
@@ -2202,7 +2205,7 @@
         "https://antigravity.google/docs/plans",
         "https://antigravity.google/docs/models/"
       ],
-      "checked_date": "2026-11-16",
+      "checked_date": "2026-11-23",
       "scores": {
         "reasoning": 4,
         "writing": 2,
